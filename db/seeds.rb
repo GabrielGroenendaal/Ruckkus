@@ -4,4 +4,11 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.fire
+
+
+ActiveRecord::Base.transaction do 
+      User.destroy_all 
+
+      user1 = User.create!(email: 'demo@gmail.com', username: 'demo', password: 'password', user_tag: '0001')
+end

@@ -23,7 +23,6 @@ export const receiveErrors = (errors) => ({
 export const login = user => dispatch => {
     SessionAPIutil.login(user)
           .then(user => { 
-                console.log("got into promise")
                 dispatch(receiveCurrentUser(user))
           })
 }
