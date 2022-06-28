@@ -11,9 +11,8 @@ class Api::UsersController < ApplicationController
   
       def create
          @user = User.new(user_params)
-         @user.tag = tag_creator()
-          if @user.valid?
-              @user.save!
+         @user.user_tag = tag_creator()
+          if @user.save
               login!(@user)
               render :show
           else

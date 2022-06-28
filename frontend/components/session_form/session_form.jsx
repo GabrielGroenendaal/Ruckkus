@@ -44,19 +44,19 @@ class SessionForm extends React.Component {
 
       usernameError(error) {
             if (this.state.username === '') {
-                  this.setState({ errorUsername: ' - This field is required' })
+                  this.setState({ username_error: ' - This field is required' })
             } else {
-                  this.setState({ errorUsername: ' - Must be 2 or more in length' })
+                  this.setState({ username_error: ' - Must be 2 or more in length' })
             }
       }
 
       passwordError(error) {
             if (this.state.password === '') {
-                  this.setState({ errorPassword: ' - This field is required' })
+                  this.setState({ password_error: ' - This field is required' })
             } else if (error === 'Password is too short (minimum is 6 characters)') {
-                  this.setState({ errorPassword: ' - Must be 6 or more in length' })
+                  this.setState({ password_error: ' - Must be 6 or more in length' })
             } else {
-                  this.setState({ errorPassword: error })
+                  this.setState({ password_error: error })
             }
       }
 
@@ -99,12 +99,12 @@ class SessionForm extends React.Component {
 
       username() {
             if (this.props.formType === 'signup') {
-                  let fieldClass = (this.state.username_error.length > 1) ? 'input-container input-error' : 'input-container'
+                  let fieldClass = (this.state.username_error.length > 1) ? 'input-container input-error' : 'input-container';
 
                   return (
                         <div className={fieldClass}>
                               <label>USERNAME
-                                    <span className="error-message">{this.state.errorUsername}</span>
+                                    <span className="error-message">{this.state.username_error}</span>
                               </label>
                               <input type="text" value={this.state.username} onChange={this.update('username')} />
                         </div>
@@ -113,12 +113,12 @@ class SessionForm extends React.Component {
       }
 
       password() {
-            let fieldClass = (this.state.password_error.length > 1) ? "input-container input-error" : "input-container"
+            let fieldClass = (this.state.password_error.length > 1) ? "input-container input-error" : "input-container";
 
             return (
                   <div className={fieldClass}>
                         <label>PASSWORD
-                              <span className="error-message">{this.state.errorPassword}</span>
+                              <span className="error-message">{this.state.password_error}</span>
                         </label>
                         <input
                               type="password"
