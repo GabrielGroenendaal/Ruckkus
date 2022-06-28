@@ -29,15 +29,14 @@ class SessionForm extends React.Component {
                         username: this.state.username
             }
             const user = Object.assign({}, values);
-            this.props.processForm(user)
-            this.renderErrors();
+            this.props.processForm(user).fail(()=> this.renderErrors())
       }
 
       emailError(error) {
             if (error === "Email has already been taken") {
-                  this.setState({ email_error: ' - This field is required' })
-            } else if (this.state.email === "") {
                   this.setState({ email_error: ' - This email has alraedy been taken' })
+            } else if (this.state.email === "") {
+                  this.setState({ email_error: ' - This field is required' })
             } else {
                   this.setState({ email_error: error })
             }
