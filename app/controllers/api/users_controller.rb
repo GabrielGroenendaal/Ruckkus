@@ -10,16 +10,16 @@ class Api::UsersController < ApplicationController
       end
   
       def create
-        @user = User.new(user_params)
-         @user.tag = tag_creator
+         @user = User.new(user_params)
+         @user.tag = tag_creator()
           if @user.valid?
               @user.save!
               login!(@user)
               render :show
           else
               #flash.now[:errors] = @user.errors.full_messages
-              render :json => @user.errors.full_messages, status: 422
-          end
+              render json: @user.errors.full_messages, status: 422
+        end
   
       end
       
