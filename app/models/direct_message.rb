@@ -1,4 +1,4 @@
-class Message < ApplicationRecord
+class DirectMessage < ApplicationRecord
       validates :creator_id, presence: true
       validates :content, presence: true
       validates :conversation_id, presence: true 

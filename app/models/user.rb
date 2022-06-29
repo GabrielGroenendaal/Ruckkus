@@ -7,12 +7,19 @@ class User < ApplicationRecord
     validates :user_tag, presence: true, length: { minimum: 4 }
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :user_url, presence: true
-    validates :status, presence: true
-    validates :description, presence: true
+    validates :status, presence: true, inclusion: { in: [ "online", "do not disturb", "away", "offline"]}
+    validates :description, presence: true, allow_blank: true
     attr_reader :password
     before_validation :ensure_session_token
 
-
+    has_many :owned_servers, foreign_key: :owner_id, class_name: :Server, dependent: :destroy
+    has_many :server_memberships, foreign_key: :user_id, class_name: :ServerMembership, dependent: :destroy
+    has_many :servers, through: :server_memberships, source: :server
+    has_many :messages, foreign_key: :creator_id, class_name: :Message, dependent: :destroy
+    has_many :direct_messages, foreign_key: :creator_id, class_name: :DirectMessage, dependent: :destroy 
+    has_many :owned_conversations, foreign_key: :owner_id, class_name: :Conversation 
+    has_many :conversation_participated_in, foreign_key: :participant_id, class_name: :ConversationParticipant, dependent: :destroy
+    has_many :conversations, through: :conversation_participated_in, source: :conversation 
     
     # Encryption
     def password=(password)
