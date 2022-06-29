@@ -19,10 +19,10 @@ const removeConversationParticipation = conversationParticipation => {
 
 export const createConversationParticipation = conversationParticipation => dispatch => {
   return APIUtil.createConversationParticipation(conversationParticipation)
-    .then(conversationParticipation => dispatch(receiveDmMembership(conversationParticipation)))
+    .then(conversationParticipation => dispatch(receiveconversationParticipant(conversationParticipation)))
 }
 
 export const deleteConversationParticipation = conversationParticipation => dispatch => {
   return APIUtil.deleteConversationParticipation(conversationParticipation)
-    .then(conversationParticipation => dispatch(removeDmMembership(conversationParticipation)))
+    .then(conversationParticipation => dispatch(removeconversationParticipant(conversationParticipation)))
 }

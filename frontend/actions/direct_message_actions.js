@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/direct_messages_api_util';
+import * as APIUtil from '../util/direct_message_api_util';
 
 export const RECEIVE_DIRECT_MESSAGE = 'RECEIVE_DIRECT_MESSAGE';
 export const REMOVE_DIRECT_MESSAGE = 'REMOVE_DIRECT_MESSAGE';

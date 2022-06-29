@@ -1,4 +1,4 @@
-json.extract! server, :id, :server_name, :is_public, :owner_id
+json.extract! server, :id, :name, :is_public, :owner_id
 # json.users server.users.map(&:id);
 
 json.channels do 
@@ -10,9 +10,9 @@ json.channels do
 end
 
 json.users do 
-  server.users.each do |user|
-    json.set! user.id do
-      json.partial! "api/users/user", user: user
+  server.members.each do |member|
+    json.set! member.id do
+      json.partial! "api/users/user", user: member
     end
   end
 end

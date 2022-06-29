@@ -5,7 +5,8 @@ import rootReducer from "../reducers/root_reducer";
 
 const initState = {
       entities: {
-            users: {}
+            users: {}, 
+            servers: {}
       },
       session: {
             id: null

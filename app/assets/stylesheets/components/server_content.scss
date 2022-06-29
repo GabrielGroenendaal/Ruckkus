@@ -1,0 +1,53 @@
+.server-content-shell {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 240px;
+      font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      background-color: #2f3136;
+      box-sizing: border-box;
+      // position: relative;
+}
+
+.server-info-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      justify-content: space-between;
+      height: 48px;
+      cursor: pointer;
+      color: #DCDDDE;
+      border-bottom: 1px solid #202225;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      background-color: #2f3136;
+      padding: 0px 19px;
+}
+
+.user-options-shell {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      margin-bottom: 1px;
+      background-color: #292b2f;
+      width: 240px;
+      box-sizing: border-box;
+}
+
+.user-info-container {
+      display: flex;
+}
+
+.user-info-shell>img {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      margin-right: 8px;
+}
+
+.user-icon-shell {
+      display: flex;
+}

@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { fetchServers } from '../../../actions/server_actions';
+import { fetchServers } from '../../actions/server_actions';
 
 
-class ServerContent extends React.Component {
+class ConversationContent extends React.Component {
       constructor(props) {
             super(props)
       }
@@ -11,8 +11,10 @@ class ServerContent extends React.Component {
       render() {
             return (
                   <div className="server-content-shell">
-                        <div className="server-info-header">
-                              
+                        <div className="conversation-list-shell">
+                              <header>
+                                    
+                              </header>
                         </div>
                         <div className="user-options-shell">
                               <div className="user-info-shell">
@@ -28,4 +30,4 @@ class ServerContent extends React.Component {
 }
 
 
-export default ServerContent;
+export default ConversationContent;

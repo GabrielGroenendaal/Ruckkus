@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
                         username: this.state.username
             }
             const user = Object.assign({}, values);
-            this.props.processForm(user).fail(()=> this.renderErrors())
+            this.props.processForm(user).fail(()=> this.renderErrors()).then(()=> this.props.history.push('/channels'))
       }
 
       emailError(error) {
