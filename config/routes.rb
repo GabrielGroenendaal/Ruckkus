@@ -19,11 +19,12 @@ Rails.application.routes.draw do
 
       resources :messages, only: [:update, :show, :destroy, :index]
       resources :direct_messages, only: [:update, :destroy, :show]
-      
+
       resources :server_memberships, only: [:create, :destroy]
       resources :conversation_participants, only: [:create, :destroy]
-      resources :friendships, only: [:create, :destroy, :update, :index]
+      #resources :friendships, only: [:create, :destroy, :update, :index]
   end
+  mount ActionCable.server => "/cable"
   root to: "static_pages#root"
 
 end
