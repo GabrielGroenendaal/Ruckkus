@@ -1,6 +1,7 @@
 
 
 class Api::ServerMembershipsController < ApplicationController
+      skip_before_action :verify_authenticity_token
 
       def create 
             @server_membership = ServerMembership.new(server_membership_params)

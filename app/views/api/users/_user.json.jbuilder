@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :email, :tag
+json.extract! user, :id, :username, :email, :user_tag
 if user.user_url == nil 
       json.user_url ""
 else 

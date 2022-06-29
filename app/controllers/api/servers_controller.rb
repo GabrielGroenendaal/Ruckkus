@@ -1,4 +1,6 @@
 class Api::ServersController < ApplicationController
+      skip_before_action :verify_authenticity_token
+
       def index
             @servers = Server.all
             render :index

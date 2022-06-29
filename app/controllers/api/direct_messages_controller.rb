@@ -1,13 +1,18 @@
 
 
 class Api::DirectMessagesController < ApplicationController
+      skip_before_action :verify_authenticity_token
 
       def show 
             @direct_message = DirectMessage.find(params[:id])
             render :show
       end
 
-
+      def index 
+            @direct_messages = DirectMessage.all
+            render :index
+      end
+      
       def create 
             @direct_message = DirectMessage.new(direct_message_params)
             @conversation = Conversation.find(params[:conversation_id])

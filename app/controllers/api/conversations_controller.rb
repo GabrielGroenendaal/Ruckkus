@@ -1,10 +1,12 @@
 
 
 class Api::ConversationsController < ApplicationController 
+      skip_before_action :verify_authenticity_token
 
       def index 
             @current_user = current_user;
-            @conversations = @current_user.conversations if (@current_user)
+            #@conversations = @current_user.conversations if (@current_user)
+            @conversations = Conversation.all
             render :index
       end
 
@@ -19,7 +21,7 @@ class Api::ConversationsController < ApplicationController
             @current_user = current_user
             @conversation.owner_id = @current_user.id
             if @conversation.save  
-                  ConversationParticipant.new(conversation_id: @conversation.id, participant_id: @current_user.id)
+                  #ConversationParticipant.new(conversation_id: @conversation.id, participant_id: @current_user.id)
                   render :show
             else  
                   render json: @conversation.errors.full_messages, status: 422

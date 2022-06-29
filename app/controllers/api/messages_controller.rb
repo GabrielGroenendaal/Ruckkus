@@ -1,6 +1,7 @@
 
 
 class Api::MessagesController < ApplicationController
+      skip_before_action :verify_authenticity_token
 
       def show
             @message = Message.find(params[:id])

@@ -33,7 +33,14 @@ class Api::UsersController < ApplicationController
         end
       end
 
-
+      def destroy
+        @user = User.find(params[:id])
+        if @user.destroy 
+            render :show 
+        else  
+            render json: @user.errors.full_messages, status: 422
+        end
+      end
       private
       def tag_creator 
         tag = '';

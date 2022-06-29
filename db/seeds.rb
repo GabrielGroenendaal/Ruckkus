@@ -58,9 +58,9 @@ ActiveRecord::Base.transaction do
       Channel.destroy_all
       channels = []
       servers.each do |server|
-            channels << Channel.create!(server_id: server.id, name: server.name + 'General')
-            channels << Channel.create!(server_id: server.id, name: server.name + 'Off Topic')
-            channels << Channel.create!(server_id: server.id, name: server.name + 'Memes')
+            channels << Channel.create!(server_id: server.id, name: server.name + ' General')
+            channels << Channel.create!(server_id: server.id, name: server.name + ' Off Topic')
+            channels << Channel.create!(server_id: server.id, name: server.name + ' Memes')
       end
 
 
@@ -78,8 +78,9 @@ ActiveRecord::Base.transaction do
       users.each do |user|
             friends = users.sample(rand(4...7))
             friends.each do |friend|
-                  if (friend != user) 
+                  if (friend != user) && !Friendship.exists?(user_id: user.id, friend_id: friend.id) 
                         friendships << Friendship.create!(user_id: user.id, friend_id: friend.id, status: 'resolved')
+                        friendships << Friendship.create!(user_id: friend.id, friend_id: user.id, status: 'resolved')
                   end
             end
             

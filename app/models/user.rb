@@ -20,7 +20,8 @@ class User < ApplicationRecord
     has_many :owned_conversations, foreign_key: :owner_id, class_name: :Conversation 
     has_many :conversation_participated_in, foreign_key: :participant_id, class_name: :ConversationParticipant, dependent: :destroy
     has_many :conversations, through: :conversation_participated_in, source: :conversation 
-    
+    has_many :friendships, foreign_key: :user_id, class_name: :Friendship
+    has_many :friends, through: :friendships, source: :friend
     # Encryption
     def password=(password)
         @password = password

@@ -1,6 +1,7 @@
 
 
 class Api::ConversationParticipantsController < ApplicationController
+      skip_before_action :verify_authenticity_token
 
       def create
             @conversation_participant = ConversationParticipant.new(conversation_participant_params)
