@@ -22,13 +22,13 @@ class ServerForm extends React.Component {
                               <div className="server-button-shell" onClick={() => this.props.openModal('formMakeServerPublic')}>
                                     <div className="server-button-imagetext">
                                           <img
-                                                src="https://i.imgur.com/5QFRLV0.png"
+                                                src={window.server_create}
                                                 alt="create-server-icon"
                                                 className="server-form-icon"
                                           />
                                           <div>Create My Own</div>
                                     </div>
-                                    <img src="https://i.imgur.com/6QdDPXJ.png" alt="create-server-icon" className="server-form-icon"/>
+                                    <img src={window.server_modal_arrow} alt="create-server-icon" className="server-form-icon"/>
                               </div>
                         </div>
                         <div className="form-server-footer">

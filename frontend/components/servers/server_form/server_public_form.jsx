@@ -27,20 +27,20 @@ class ServerPublicForm extends React.Component {
                         <div className="public-server-content">
                               <div className="server-button-shell" onClick={() => this.handleClick(false)}>
                                     <div className="server-button-imagetext">
-                                          <img src="https://i.imgur.com/s0Ft3iR.png" alt="create-server-icon" className="server-form-icon"/>
+                                          <img src={window.private_server} alt="create-server-icon" className="server-form-icon"/>
                                           <div>For me and my friends</div>
                                     </div>
-                                    <img src="https://i.imgur.com/6QdDPXJ.png"
+                                    <img src={window.server_modal_arrow}
                                           alt="create-server-icon"
                                           className="server-form-icon"
                                     />
                               </div>
                               <div className="server-button-shell" onClick={() => this.handleClick(true)}>
                                     <div className="server-button-imagetext">
-                                          <img src="https://i.imgur.com/SD9FXet.png" alt="create-server-icon" className="server-form-icon"/>
+                                          <img src={window.public_server} alt="create-server-icon" className="server-form-icon"/>
                                           <div> For a club or community</div>
                                     </div>
-                                    <img src="https://i.imgur.com/6QdDPXJ.png" alt="create-server-icon" className="server-form-icon"/>
+                                    <img src={window.server_modal_arrow}alt="create-server-icon" className="server-form-icon"/>
                               </div>
                               <div>Not sure? You can <span className="server-modal-link-text" onClick={() => this.handleClick(false)}>skip this question</span> for now.</div>
                         </div>

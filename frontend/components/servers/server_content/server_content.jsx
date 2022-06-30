@@ -127,11 +127,26 @@ class ServerContent extends React.Component {
             )
       }
 
+      friendsList() {
+            return (
+                  <div>
+                        {
+                              props.conversations.map(conversation => {
+                                    return <div key={conversation.id}>{conversation.id}</div>
+                              })
+                        }
+                  </div>
+            )
+      }
       render() {
+            let infoDisplay
+            (this.props.location.pathname === '/channels/@me' || this.props.location.pathname === '/channels/@me/:dmServerId') ?
+            infoDisplay = this.friendsList :
+            infoDisplay = this.serverInfo
 
             return (
                   <div className="server-content-shell">
-                        {this.serverInfo()}
+                        {infoDisplay()}
                         <UserContainer />
                   </div>
             )

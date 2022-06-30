@@ -1,0 +1,45 @@
+.server-nav-channels-header {
+      position: relative;
+      padding-top: 16px;
+      padding-right: 8px;
+      padding-left: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #96989d;
+      box-sizing: border-box;
+      height: 24px;
+      margin-bottom: 10px;
+}
+
+.server-nav-channel {
+      padding: 6px 8px;
+      position: relative;
+      margin: 0 8px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: #96989d;
+}
+
+.channel-handle {
+      display: flex;
+}
+
+.channel-hashtag {
+      position: relative;
+      margin-right: 6px;
+}
+
+.server-nav-channel-name {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+      color: #96989d;
+}
+
+.channel-options-gear:hover {
+      color: white;
+}
