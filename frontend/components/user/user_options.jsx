@@ -19,7 +19,7 @@ function UserOptions(props) {
             let user_url = (props.currentUser.user_url === '') ? window.default : props.currentUser.user_url
 
             return (
-                  <div className="user-settings-name-email">
+                  <div className="user-settings-nameemail">
                         <div className="settings-profile">
                               <img src={user_url} alt="user profile picture" />
                         </div>
@@ -32,7 +32,9 @@ function UserOptions(props) {
       }
 
       const handleSubmit = (e) => {
-            if (props.currentUser.id === 1) return null
+            if (props.currentUser.email == 'demo@gmail.com') {
+                  return null
+            }
             e.preventDefault();
             e.stopPropagation();
 
@@ -49,21 +51,21 @@ function UserOptions(props) {
             let usernameBody
             if (usernameEdit) {
                   usernameBody = (
-                        <div className="user-edit-container username-edit">
-                              <form onSubmit={(e) => handleSubmit(e)} className="user-edit-form">
+                        <div className="edit-user-shell edit-username">
+                              <form onSubmit={(e) => handleSubmit(e)} className="edit-user-form">
                                     <input type="text" value={username} onChange={(e) => setUsername(e.currentTarget.value)} />
                               </form>
                         </div>
                   )
             } else {
                   usernameBody = (
-                        <div className="user-edit-container username-edit">
-                              <div className="user-edit-info">
+                        <div className="edit-user-shell edit-username">
+                              <div className="edit-user-info">
                                     <h3>USERNAME</h3>
                                     <span>{props.currentUser.username}</span>
-                                    <span id="user-options-tag">#{props.currentUser.tag}</span>
+                                    <span id="user-options-tag">#{props.currentUser.user_tag}</span>
                               </div>
-                              <div className="user-edit-button" onClick={() => setUsernameEdit(!usernameEdit)}>
+                              <div className="edit-user-button" onClick={() => setUsernameEdit(!usernameEdit)}>
                                     Edit
                               </div>
                         </div>
@@ -74,7 +76,7 @@ function UserOptions(props) {
       }
 
       const demoUser = () => {
-            if (props.currentUser.id === 1) {
+            if (props.currentUser.name == 'John Souls') {
                   return (
                         <div className="demo-edit-warning">
                               Editing Disabled For Demo Account
@@ -87,20 +89,20 @@ function UserOptions(props) {
             let emailBody
             if (emailEdit) {
                   emailBody = (
-                        <div className="user-edit-container">
-                              <form onSubmit={(e) => handleSubmit(e)} className="user-edit-form">
+                        <div className="edit-user-shell">
+                              <form onSubmit={(e) => handleSubmit(e)} className="edit-user-form">
                                     <input type="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
                               </form>
                         </div>
                   )
             } else {
                   emailBody = (
-                        <div className="user-edit-container">
-                              <div className="user-edit-info">
+                        <div className="edit-user-shell">
+                              <div className="edit-user-info">
                                     <h3>EMAIL</h3>
                                     <span>{props.currentUser.email}</span>
                               </div>
-                              <div className="user-edit-button" onClick={() => setEmailEdit(!emailEdit)}>
+                              <div className="edit-user-button" onClick={() => setEmailEdit(!emailEdit)}>
                                     Edit
                               </div>
                         </div>
@@ -112,9 +114,9 @@ function UserOptions(props) {
 
 
       const editDisplay = () => {
-
+            
             return (
-                  <div className="user-options-edit-container">
+                  <div className="user-options-edit-shell">
                         {usernameEditDisplay()}
                         {emailEditDisplay()}
                   </div>
@@ -124,7 +126,7 @@ function UserOptions(props) {
       return (
             <div className="user-options">
                   <div className="close-button-circle">
-                        <div className="close-button-svg-container" onClick={() => props.closeModal()}>
+                        <div className="close-button-svg-shell" onClick={() => props.closeModal()}>
                               <svg
                                     className="close-button-circle-x"
                                     width="24"
@@ -137,7 +139,7 @@ function UserOptions(props) {
                               ESC
                         </div>
                   </div>
-                  <div className="user-settings-container">
+                  <div className="user-settings-shell">
                         <h3>USER SETTINGS</h3>
                         <div id="my-account">My Account</div>
                         <div className="logout-button" onClick={() => handleClick()}>
@@ -147,10 +149,10 @@ function UserOptions(props) {
                               <svg aria-hidden="false" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M18 2H7C5.897 2 5 2.898 5 4V11H12.59L10.293 8.708L11.706 7.292L16.414 11.991L11.708 16.706L10.292 15.294L12.582 13H5V20C5 21.103 5.897 22 7 22H18C19.103 22 20 21.103 20 20V4C20 2.898 19.103 2 18 2Z"></path></svg>
                         </div>
                   </div>
-                  <div className="account-settings-container">
+                  <div className="account-settings-shell">
                         <h3>My Account</h3>
                         <div className="account-settings-box">
-                              <div className="user-banner"></div>
+                              <div className="banner-user"></div>
                               <div>
                                     {userProfile()}
                                     {editDisplay()}
