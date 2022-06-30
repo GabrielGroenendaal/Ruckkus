@@ -8,23 +8,23 @@ class ServerPublicForm extends React.Component {
       }
 
       handleClick(bool) {
-            bool ? this.props.publicTrue() : this.props.publicFalse();
+            bool ? this.props.make_public() : this.props.make_private();
             this.props.openModal('createServer');
       }
 
       render() {
             return (
-                  <div className="server-public-form-container modal-light-theme">
+                  <div className="public-server-form-shell modal-light-theme">
                         {ModalCloseButton(this.props)}
 
-                        <div className="server-public-header server-modal-header">
+                        <div className="public-server-header server-modal-header">
                               <h3>Tell us more about your server</h3>
                               <div>
                                     In order to help you with your setup,
                                     is your new server for just a few friends or a larger community?
                               </div>
                         </div>
-                        <div className="server-public-content">
+                        <div className="public-server-content">
                               <div className="server-button-shell" onClick={() => this.handleClick(false)}>
                                     <div className="server-button-imagetext">
                                           <img src="https://i.imgur.com/s0Ft3iR.png" alt="create-server-icon" className="server-form-icon"/>
@@ -44,7 +44,7 @@ class ServerPublicForm extends React.Component {
                               </div>
                               <div>Not sure? You can <span className="server-modal-link-text" onClick={() => this.handleClick(false)}>skip this question</span> for now.</div>
                         </div>
-                        <div className="server-public-footer">
+                        <div className="public-server-footer">
                               <div onClick={() => this.props.openModal('formServer')} className="server-modal-back-button">Back</div>
                         </div>
                   </div>

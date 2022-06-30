@@ -6,7 +6,7 @@ import { closeModal } from '../../actions/modal_actions'
 import ServerIndexContainer from '../servers/server_index/server_index_container'
 import ServerFormContainer from '../servers/server_form/server_form_container'
 import ServerPublicFormContainer from '../servers/server_form/server_public_form_container'
-
+import ServerCreateFormContainer from '../servers/server_form/server_create_form_container'
 class Modal extends React.Component {
       constructor(props) {
             super(props)
@@ -37,6 +37,8 @@ class Modal extends React.Component {
                         break;
                   case 'editServer':
                   case 'createServer':
+                        component = <ServerCreateFormContainer is_public={this.state.is_public} />;
+                        break;
                   case 'indexServer':
                         component = <ServerIndexContainer />
                         break;

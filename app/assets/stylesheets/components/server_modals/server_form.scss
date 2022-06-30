@@ -1,5 +1,5 @@
-.server-form-content,
-.server-public-content {
+.form-server-content,
+.public-server-content {
       margin-top: 24px;
       padding: 0 8px 8px 16px;
       width: 100%;
@@ -9,7 +9,7 @@
       box-sizing: border-box;
 }
 
-.server-form-footer {
+.form-server-footer {
       display: flex;
       justify-content: center;
       padding: 16px;
@@ -39,7 +39,7 @@
 }
 
 
-.server-public-content>div {
+.public-server-content>div {
       margin-top: 18px;
       margin-bottom: 16px;
       font-size: 14px;
@@ -47,7 +47,7 @@
       color: #4f5660
 }
 
-.server-public-footer {
+.public-server-footer {
       padding: 16px;
       width: 100%;
       box-sizing: border-box;
