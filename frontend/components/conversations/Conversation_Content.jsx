@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { fetchServers } from '../../actions/server_actions';
-import User from '../user/User';
+import UserContainer from '../user/user_container';
 class ConversationContent extends React.Component {
       constructor(props) {
             super(props)
@@ -15,7 +15,7 @@ class ConversationContent extends React.Component {
                                     
                               </header>
                         </div>
-                        <User />
+                        <UserContainer />
                   </div>
             )
       }

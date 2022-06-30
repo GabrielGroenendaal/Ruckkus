@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-
+import { withRouter } from "react-router-dom";
 import { createServer, fetchServers } from "../../../actions/server_actions";
 import { openModal, closeModal } from "../../../actions/modal_actions";
 import { createServerMembership } from "../../../actions/server_membership_actions";

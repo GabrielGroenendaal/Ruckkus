@@ -7,6 +7,7 @@ import ServerIndexContainer from '../servers/server_index/server_index_container
 import ServerFormContainer from '../servers/server_form/server_form_container'
 import ServerPublicFormContainer from '../servers/server_form/server_public_form_container'
 import ServerCreateFormContainer from '../servers/server_form/server_create_form_container'
+import ServerEditFormContainer from '../servers/server_form/server_edit_container'
 class Modal extends React.Component {
       constructor(props) {
             super(props)
@@ -36,11 +37,15 @@ class Modal extends React.Component {
                         component = <ServerPublicFormContainer serverPublic={this.state.is_public} make_public={this.make_public} make_private={this.make_private} />
                         break;
                   case 'editServer':
+                        component = <ServerEditFormContainer history={this.props.history} />;
+                        break;
                   case 'createServer':
                         component = <ServerCreateFormContainer is_public={this.state.is_public} />;
                         break;
                   case 'indexServer':
                         component = <ServerIndexContainer />
+                        break;
+                  case 'userOptions':
                         break;
                   // case 'createChannel':
                   // case 'editChannel':
