@@ -1,16 +1,15 @@
 import { connect } from "react-redux";
+import ServerContent from "./server_content";
 import { withRouter } from "react-router-dom";
 import { fetchCurrentUser, logout } from "../../../actions/session_actions";
 import { fetchServer, fetchServers, deleteServer } from "../../../actions/server_actions";
 import { deleteServerMembership } from "../../../actions/server_membership_actions";
 import { fetchConversations } from "../../../actions/conversation_actions";
 import { openModal } from "../../../actions/modal_actions";
-import ServerContent from './Server_Content'
 import { fetchChannel } from "../../../actions/channel_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
-      console.log(window.getState())
       return {
             currentUser: state.entities.users[state.session.id],
             server: state.entities.servers[ownProps.match.params.serverId],
