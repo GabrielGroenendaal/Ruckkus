@@ -44,7 +44,7 @@ ActiveRecord::Base.transaction do
 
       ServerMembership.destroy_all
       memberships = Hash.new { |h, k| h[k] = [] }
-      servers.each { |server| memberships[server.id] << ServerMembership.create!(user_id: users[0].id, server_id: server.id)}
+      servers.sample(3).each { |server| memberships[server.id] << ServerMembership.create!(user_id: users[0].id, server_id: server.id)}
       servers.each do |server|
             memberships[server.id] = []
             count = 6

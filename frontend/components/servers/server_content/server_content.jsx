@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { fetchServers } from '../../../actions/server_actions';
-
+import User from '../../user/User';
 
 class ServerContent extends React.Component {
       constructor(props) {
@@ -14,18 +14,10 @@ class ServerContent extends React.Component {
                         <div className="server-info-header">
                               
                         </div>
-                        <div className="user-options-shell">
-                              <div className="user-info-shell">
-
-                              </div>
-                              <div className="user-icon-shell">
-
-                              </div>
-                        </div>
+                        <User />
                   </div>
             )
       }
 }
 
-
-export default ServerContent;
+export default ServerContent; 

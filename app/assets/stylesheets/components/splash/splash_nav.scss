@@ -1,0 +1,39 @@
+
+.splash-nav-header-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100vw;
+      height: 60px;
+}
+
+// the navigation bar
+// .splash-logo
+.splash-logo {
+      color: white;
+      font-family: 'ginto-nord-black', "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+// .splash-logo-discord
+.splash-discord-logo {
+      font-size: 24px;
+      padding-right: 6px;
+}
+
+.splash-navigation-links {
+      display: flex;
+      justify-content: space-around;
+      width: 20%;
+
+      li > a {
+            color: white;
+            text-decoration: none;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+      }
+
+      li > a:hover {
+            text-decoration: underline;
+      }
+}

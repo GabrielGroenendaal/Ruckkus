@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { fetchServers } from '../../actions/server_actions';
-
-
+import User from '../user/User';
 class ConversationContent extends React.Component {
       constructor(props) {
             super(props)
@@ -16,14 +15,7 @@ class ConversationContent extends React.Component {
                                     
                               </header>
                         </div>
-                        <div className="user-options-shell">
-                              <div className="user-info-shell">
-
-                              </div>
-                              <div className="user-icon-shell">
-
-                              </div>
-                        </div>
+                        <User />
                   </div>
             )
       }

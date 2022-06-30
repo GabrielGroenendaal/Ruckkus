@@ -34,3 +34,13 @@ export const deleteServer = serverId => {
             url: `api/servers/${serverId}`
       })
 };
+
+
+export const serverInitial = server => {
+      let serverInitial = '';
+      const words = server.name.split(" ");
+      words.map(word => (
+        serverInitial += word[0]
+      ))
+      return serverInitial;
+}

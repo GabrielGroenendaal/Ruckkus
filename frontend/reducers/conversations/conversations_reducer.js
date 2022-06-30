@@ -1,4 +1,4 @@
-import { RECEIVE_CONVERSATIONS, RECEIVE_CONVERSATION, REMOVE_CONVERSATION } from "../../actions/CONVERSATION_actions";
+import { RECEIVE_CONVERSATIONS, RECEIVE_CONVERSATION, REMOVE_CONVERSATION } from "../../actions/conversation_actions";
 import { RECEIVE_CONVERSATION_PARTICIPATION } from "../../actions/conversation_participant_actions";
 
 

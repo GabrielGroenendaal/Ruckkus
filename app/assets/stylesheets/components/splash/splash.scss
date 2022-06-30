@@ -1,0 +1,48 @@
+html, body {
+      background-color: #36393f;
+}
+
+.splash-container {
+      background-color: #404eed;
+}
+
+.splash-content {
+      // background: url('https://i.imgur.com/jeqUTst.jpg');
+      background: image-url('splash.jpeg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: bottom;
+      height: 100%;
+}
+
+.main-splash-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 120px 0px;
+      color: white;
+      text-rendering: optimizeLegibility;
+      font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-size: 100%;
+}
+
+// .splash-main-h1
+.splash-main-h1 {
+      display: block;
+      font-family: 'ginto-nord-black', "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 95%;
+      text-rendering: geometricPrecision;
+}
+
+// .splash-main-description
+.splash-main-description {
+      width: 40%;
+      min-width: 400px;
+      text-align: center;
+      font-size: 20px;
+      margin-top: 40px;
+      line-height: 1.625;
+}

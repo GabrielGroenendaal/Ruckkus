@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SessionFormHeader from './session_form_header';
+import SessionFormLink from './session_form_link';
 
 class SessionForm extends React.Component {
       constructor(props) {
@@ -129,38 +131,7 @@ class SessionForm extends React.Component {
             )
       }
 
-      link() {
-            if (this.props.formType === 'signup') {
-                  return (
-                        <div className="session-link-container">
-                              <Link to="/login">Already have an account?</Link>
-                        </div>
-                  )
-            } else {
-                  return (
-                        <div className="session-link-container">
-                              <span>Need an account? <Link to="/signup">Register</Link></span>
-                        </div>
-                  )
-            }
-      }
 
-      sessionFormHeader() {
-            if (this.props.formType === 'signup') {
-                  return (
-                        <div className="session-form-header">
-                              <h3>Create an account</h3>
-                        </div>
-                  )
-            } else {
-                  return (
-                        <div className="session-form-header">
-                              <h3>Welcome back!</h3>
-                              <div>We're so excited to see you again!</div>
-                        </div>
-                  )
-            }
-      }
 
       createDemoUser() {
             if (this.props.formType === 'login') {
@@ -180,7 +151,7 @@ class SessionForm extends React.Component {
             return (
                   <div className="session-form-container">
                         <div className="input-form-container">
-                              {this.sessionFormHeader()}
+                              {SessionFormHeader(this.props)}
                               <form onSubmit={this.handleSubmit} className="session-form">
 
                                     {this.email()}
@@ -193,7 +164,7 @@ class SessionForm extends React.Component {
 
                                     {this.createDemoUser()}
 
-                                    {this.link()}
+                                    {SessionFormLink(this.props)}
                               </form>
                         </div>
                         <div className="session-form-underlay"></div>
