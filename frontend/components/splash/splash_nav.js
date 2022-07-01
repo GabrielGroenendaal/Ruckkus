@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 const SplashNav = (props) => {
-      let linkText = props.currentUser ? 'Join the Ruckus' : 'Login'
+      let linkText = props.currentUser ? 'Join the Ruckkus' : 'Login'
       let new_url = (props.currentUser) ? '/channels' : '/login'
       return (
             <header className="splash-navbar">
@@ -12,7 +12,7 @@ const SplashNav = (props) => {
                               <span className="splash-discord-logo">
                                     <i className="fab fa-discord"></i>
                               </span>
-                              <span>Ruckus</span>
+                              <span>Ruckkus</span>
                         </div>
                         <ul className="splash-navigation-links">
                               <li><a href="https://github.com/GabrielGroenendaal/DiscordClone/" target="_blank">Github</a></li>

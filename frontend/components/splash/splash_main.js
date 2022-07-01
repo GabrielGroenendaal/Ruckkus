@@ -12,7 +12,7 @@ const SplashMain = (props) => {
                               Where just you and a handful of friends can spend time together.
                               A place that makes it easy to talk every day and hang out more often.
                         </div>
-                        <button className="splash-button" onClick={() => { props.history.push(new_url) }}>Join the Ruckus</button>
+                        <button className="splash-button" onClick={() => { props.history.push(new_url) }}>Join the Ruckkus</button>
                   </div>
             </main>
       )
