@@ -90,7 +90,7 @@ function Conversation(props) {
                         <div className="message-form-shell">
                               <form className="message-form">
                                     <input type="text"
-                                          value="a demo message"
+                                          defaultValue="a demo message"
                                     />
                               </form>
                         </div>

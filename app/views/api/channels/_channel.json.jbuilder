@@ -7,3 +7,7 @@ json.messages do
     end
   end
 end
+
+json.currentUser do 
+  json.partial! "api/users/user", user: current_user
+end
