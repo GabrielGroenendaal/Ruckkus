@@ -1,0 +1,22 @@
+.direct-messages-users-list-shell {
+      color: #96989d;
+
+      header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
+            height: 48px;
+            border-bottom: 1px solid #202225;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            background-color: #2f3136;
+            padding: 0px 19px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: .02em;
+            font-family: 'ginto-normal', "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 600;
+      }
+}
