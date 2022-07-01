@@ -26,6 +26,7 @@ class ServerNav extends React.Component {
       }
 
       render() {
+            if (!this.props.currentUser.servers) { return null }
             return (
                   <div className="server-navigation-container">
                         <div className="server-navigation-bar-container">

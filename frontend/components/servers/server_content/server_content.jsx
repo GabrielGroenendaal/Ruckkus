@@ -43,7 +43,7 @@ class ServerContent extends React.Component {
       }
 
       handleLeave() {
-            this.props.deleteServerMembersip({ user_id: this.props.currentUser.id, server_id: this.props.server.id })
+            this.props.deleteServerMembership({ user_id: this.props.currentUser.id, server_id: this.props.server.id })
             this.props.history.push(`/channels/@me`)
       }
       
