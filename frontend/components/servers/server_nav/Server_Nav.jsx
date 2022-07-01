@@ -14,7 +14,7 @@ class ServerNav extends React.Component {
 
       componentDidMount() {
             const match = matchPath(this.props.history.location.pathname, { path: `/channels/:serverid/channelId` })
-            this.props.fetchConversations
+            this.props.fetchConversations()
             this.props.currentUser.servers.map(serverId => {
                   this.props.fetchServer(serverId).then(
                         () => {

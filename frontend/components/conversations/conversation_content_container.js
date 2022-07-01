@@ -4,15 +4,23 @@ import ConversationContent from "./Conversation_Content";
 import { fetchCurrentUser, logout } from "../../actions/session_actions";
 import { fetchServer, fetchServers, deleteServer } from "../../actions/server_actions";
 import { deleteServerMembership } from "../../actions/server_membership_actions";
-import { fetchConversations } from "../../actions/conversation_actions";
+import { fetchConversations, fetchConversation } from "../../actions/conversation_actions";
 import { openModal } from "../../actions/modal_actions";
+import { withRouter } from "react-router-dom";
 
+const currentUsersConversations = state => {
+      if (Object.keys(state.entities.conversations).length < state.entities.users[state.session.id].conversations.length) return [];
+      return state.entities.users[state.session.id].conversations.map(conversationId => (
+            state.entities.conversations[conversationId]
+      ))
+}
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
       return {
             currentUser: state.entities.users[state.session.id],
             channels: Object.values(state.entities.channels),
-            conversations: Object.values(state.entities.conversations)
+            conversations: Object.values(state.entities.conversations),//currentUsersConversations(state),
+            conversationsId: state.entities.users[state.session.id].ids
       }
 }
 
@@ -22,6 +30,7 @@ const mapDispatchToProps = dispatch => {
             logout: () => dispatch(logout()),
             openModal: modal => dispatch(openModal(modal)),
             fetchConversations: () => dispatch(fetchConversations()),
+            fetchConversation: id => dispatch(fetchConversation(id)),
             fetchServers: () => dispatch(fetchServers()),
             fetchServer: id => dispatch(fetchServer(id)),
             deleteServer: id => dispatch(deleteServer(id)),
@@ -29,4 +38,4 @@ const mapDispatchToProps = dispatch => {
       }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ConversationContent);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ConversationContent));

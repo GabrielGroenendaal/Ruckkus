@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/Root'
 import * as util from './util/session_api_util'
-
+import * as conversationUtil from './util/conversation_api_util'
 document.addEventListener('DOMContentLoaded', () => {
       let store;
       if (window.currentUser) {
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // it can be confusing when debugging, sometimes giving you access to state
       // when you shouldn't
       window.getState = store.getState;
+      window.conversationUtil = conversationUtil;
       window.dispatch = store.dispatch; // just for testing!
       
       ReactDOM.render(<Root store={store} />, document.getElementById("root"));
