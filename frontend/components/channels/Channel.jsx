@@ -42,7 +42,7 @@ class Channel extends React.Component {
                         </div>
 
                         <div className="channel-content-shell">
-                              <ChannelMessagesContainer />
+                              <ChannelMessagesContainer/>
                               {this.usersList()}
                         </div>
                   </div>

@@ -67,7 +67,7 @@ function ChannelMessages(props) {
 
   return (
     <div className="channel-messages-shell">
-      <div className="messages-body">
+      {/* <div className="messages-body">
         <ul>
           {
             props.messages.map(message => {
@@ -88,7 +88,7 @@ function ChannelMessages(props) {
             })
           }
         </ul>
-      </div>
+      </div> */}
 
         {/* <ChannelMessageCreateContainer /> */}
     </div>
