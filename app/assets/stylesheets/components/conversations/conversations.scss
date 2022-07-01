@@ -55,13 +55,14 @@
       box-sizing: border-box;
 }
 
-.dm-messages-shell {
+.direct-messages-shell {
       height: 100%;
 }
 
-.dm-messages-body {
+.direct-messages-body {
       overflow: hidden auto;
       height: calc(100% - 68px);
+      color: #dcddde;
 }
 
 .direct-message-users-list-shell {
