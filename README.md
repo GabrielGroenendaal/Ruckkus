@@ -1,24 +1,28 @@
-# README
+# Welcome to Ruckkus
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Ruckkus](https://ruckkus.herokuapp.com/#/) is a clone of the popular messaging app Discord where users can join and create servers to live chat with others. 
 
-Things you may want to cover:
+## Technologies Utilized
+* Ruby 2.5.1 on Rails for the backend 
+* React/Redux for the frontend
+* Javascript, AJAX, and JBuilder 
+* PostgreSQL for database management
+* HTML5 for website structure 
+* SCSS and CSS for Styling 
+* Action Cable and Websockets for live chatting 
+* Heroku for live deployment
 
-* Ruby version
+## Complete Features
+* Servers
+  * Server Options
+* Channels
+* Conversations
+* Users
+  * User Options
+  
+## Features in Progress
+* Message Display
+* Live Chat 
+* Friending / Blocking Users 
+* Uploading images for profile pics / server pics 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
