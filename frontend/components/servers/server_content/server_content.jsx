@@ -138,6 +138,7 @@ class ServerContent extends React.Component {
             )
       }
       render() {
+            if (!this.props.server) { return null }
             let infoDisplay
             (this.props.location.pathname === '/channels/@me' || this.props.location.pathname === '/channels/@me/:dmServerId') ?
             infoDisplay = this.friendsList :
