@@ -36,6 +36,7 @@
 
 ## Features in Progress
 * Message Display
+* Channel Creation and Editing
 * Live Chat 
 * Friending / Blocking Users 
 * Uploading images for profile pics / server pics 
