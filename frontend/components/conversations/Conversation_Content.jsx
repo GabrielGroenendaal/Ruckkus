@@ -13,8 +13,8 @@ class ConversationContent extends React.Component {
 
       // componentDidMount() {
       //       const match = matchPath(this.props.history.location.pathname, { path: `/channels/@ne/conversationId` })
-      //       this.props.fetchConversations().then(conversations =>
-      //             conversations.map(conversationId => {
+      //       this.props.fetchConversations()
+      //       this.props.conversations.map(conversationId => {
       //                   this.props.fetchConversation(conversationId).then(
       //                         () => {
       //                               if (match && match.params.conversationId !== '@me') {
@@ -22,23 +22,25 @@ class ConversationContent extends React.Component {
       //                               }
       //                         })
       //             })
-      //       )
+            
       // }
       friendsList() {
+            //console.log(this.props)
             return (
                   <div className="direct-messages-users-list-shell">
                         <header>
                               <h2>DIRECT MESSAGES</h2>
                         </header>
-                        {/* {
+                        {
                               this.props.conversations.map(conversation => {
-                                    let userIds = Object.keys(conversation.participants)
-                                    let userId = userIds.filter(id => {
-                                          if (id !== this.props.currentUser.id.toString()) {
-                                                return id
+                                    let userIds = Object.values(conversation.users)
+                                    console.log(userIds)
+                                    let userId = userIds.filter(user => {
+                                          if (user.id !== this.props.currentUser.id) {
+                                                return user
                                           }
                                     })
-                                    const user = conversation.participants[userId[0]]
+                                    const user = conversation.users[userId[0].id]
                                     let user_url = (user.user_url === '') ? window.default : user.user_url
 
                                     return (
@@ -52,7 +54,7 @@ class ConversationContent extends React.Component {
                                           </div>
                                     )
                               })
-                        } */}
+                        }
                   </div>
             )
       }

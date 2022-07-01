@@ -8,13 +8,13 @@ const grabUser = (state, ownProps) => {
       let conversation = state.entities.conversations[ownProps.match.params.conversationId];
       if (conversation) {
             let currentUser = state.entities.users[state.session.id];
-            let participants = Object.keys(conversation.participants);
+            let participants = Object.keys(conversation.users);
             let participantId = participants.filter(id => {
                   if (id !== currentUser.id.toString()) {
                         return id
                   }
             });
-            return conversation.participants[participantId[0]];
+            return conversation.users[participantId[0]];
       }
 }
 

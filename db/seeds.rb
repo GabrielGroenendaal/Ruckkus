@@ -81,7 +81,7 @@ ActiveRecord::Base.transaction do
             friends.each do |friend|
                   if (friend != user) && !Friendship.exists?(user_id: user.id, friend_id: friend.id) 
                         friendships << Friendship.create!(user_id: user.id, friend_id: friend.id, status: 'resolved')
-                        friendships << Friendship.create!(user_id: friend.id, friend_id: user.id, status: 'resolved')
+                        Friendship.create!(user_id: friend.id, friend_id: user.id, status: 'resolved')
                   end
             end
             
@@ -90,7 +90,9 @@ ActiveRecord::Base.transaction do
       Conversation.destroy_all 
       ConversationParticipant.destroy_all
       DirectMessage.destroy_all
+      #convos = {}
       friendships.each do |friendship|
+            #if (convos[friendship.user_id])
             new_conversation = Conversation.create!(owner_id: friendship.user_id)
             ConversationParticipant.create(participant_id: friendship.user_id, conversation_id: new_conversation.id)
             ConversationParticipant.create(participant_id: friendship.friend_id, conversation_id: new_conversation.id)

@@ -6,3 +6,6 @@ else
 end
 
 json.servers user.servers.map(&:id)
+json.conversations user.conversations.map(&:id)
+json.direct_messages user.direct_messages.map(&:id)
+json.messages user.messages.map(&:id)

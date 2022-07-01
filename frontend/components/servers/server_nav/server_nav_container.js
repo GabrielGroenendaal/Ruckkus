@@ -5,7 +5,8 @@ import { fetchServer, fetchServers } from "../../../actions/server_actions";
 import { fetchCurrentUser, logout } from '../../../actions/session_actions'
 import { openModal } from '../../../actions/modal_actions'
 import { fetchConversation, fetchConversations } from "../../../actions/conversation_actions";
-
+import { fetchMessage, fetchMessages } from "../../../actions/message_actions";
+import { fetchDirectMessage, fetchDirectMessages } from "../../../actions/direct_message_actions";
 const currentUsersServers = state => {
       if (Object.keys(state.entities.servers).length < state.entities.users[state.session.id].servers.length) return [];
       return state.entities.users[state.session.id].servers.map(serverId => (
