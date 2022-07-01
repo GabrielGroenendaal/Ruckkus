@@ -8,7 +8,6 @@ const serversReducer = (state = {}, action) => {
       let newState
       switch (action.type) {
             case RECEIVE_SERVER:
-                  console.log('check')
                   const newServer = { [action.server.id]: action.server };
                   return Object.assign({}, state, newServer);
             case RECEIVE_SERVERS:

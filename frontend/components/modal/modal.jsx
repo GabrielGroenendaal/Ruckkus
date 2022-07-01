@@ -34,7 +34,6 @@ class Modal extends React.Component {
                         component = <ServerFormContainer />;
                         break;
                   case 'formMakeServerPublic':
-                        console.log(this.props.modal)
                         component = <ServerPublicFormContainer serverPublic={this.state.is_public} make_public={this.make_public} make_private={this.make_private} />
                         break;
                   case 'editServer':

@@ -11,7 +11,6 @@ class ServerCreateForm extends React.Component {
             super(props)
 
             const defaultServer = `${props.currentUser.username}'s server`
-            console.log(props)
             this.state = {
                   name: defaultServer,
                   is_public: props.is_public

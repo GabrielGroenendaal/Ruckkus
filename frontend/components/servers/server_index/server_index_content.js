@@ -7,7 +7,6 @@ const ServerIndexContent = (props) => {
             <ul className="server-index-modal-content">
                   {
                         props.servers.map(server => {
-                              console.log(server)
                               return (
                                     <ServerIndexItem server={server} handleClick={props.handleClick} key={server.id} />
                               )

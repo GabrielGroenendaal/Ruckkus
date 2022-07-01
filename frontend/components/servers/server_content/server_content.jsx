@@ -9,7 +9,6 @@ import { matchPath } from 'react-router-dom';
 class ServerContent extends React.Component {
       constructor(props) {
             super(props)
-            console.log(props)
             this.closeDropdown = this.closeDropdown.bind(this)
             this.serverInfo = this.serverInfo.bind(this)
             this.serverOptions = this.serverOptions.bind(this)

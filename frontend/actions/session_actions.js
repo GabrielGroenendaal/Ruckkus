@@ -11,7 +11,6 @@ export const receiveCurrentUser = (currentUser) => ({
 });
 
 export const logoutCurrentUser = () => {
-      console.log("inside the dispatch");
       return {
             type: LOGOUT_CURRENT_USER
       }

@@ -34,7 +34,6 @@ class ConversationContent extends React.Component {
                         {
                               this.props.conversations.map(conversation => {
                                     let userIds = Object.values(conversation.users)
-                                    console.log(userIds)
                                     let userId = userIds.filter(user => {
                                           if (user.id !== this.props.currentUser.id) {
                                                 return user
