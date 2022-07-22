@@ -9,6 +9,7 @@ import ServerPublicFormContainer from '../servers/server_form/server_public_form
 import ServerCreateFormContainer from '../servers/server_form/server_create_form_container'
 import ServerEditFormContainer from '../servers/server_form/server_edit_container'
 import UserOptionsContainer from '../user/user_options_container'
+
 class Modal extends React.Component {
       constructor(props) {
             super(props)
