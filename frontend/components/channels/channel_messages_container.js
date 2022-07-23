@@ -7,7 +7,7 @@ import ChannelMessages from "./channel_messages";
 const mapStateToProps = (state) => {
   return {
     messages: state.entities.messages,
-    users: state.entities.users
+    users: state.entities.users,
   };
 };
 

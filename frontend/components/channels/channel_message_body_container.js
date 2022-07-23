@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import { updateMessage, deleteMessage } from "../../actions/message_actions";
-import MessageBody from "./channel_message_body";
+import ChannelMessageBody from "./channel_message_body";
 
 const mapStateToProps = state => {
   return {
-    currentUserId: state.session.id
+    currentUser: state.entities.users[state.session.id]
   }
 }
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MessageBody)
+export default connect(mapStateToProps, mapDispatchToProps)(ChannelMessageBody)

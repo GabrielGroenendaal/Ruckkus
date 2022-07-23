@@ -8,6 +8,6 @@ json.messages do
   end
 end
 
-json.currentUser do 
-  json.partial! "api/users/user", user: current_user
-end
+# json.currentUser do 
+#   json.partial! "api/users/user", user: current_user
+# end

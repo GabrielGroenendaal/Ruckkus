@@ -73,7 +73,7 @@ ActiveRecord::Base.transaction do
       Message.destroy_all
       channels.each do |channel|
             (0...rand(2...8)).each do |i|
-                  Message.create(creator_id: memberships[channel.server_id].sample(), channel_id: channel.id, content: Faker::Movie.quote)
+                  Message.create!(creator_id: memberships[channel.server_id].sample().user_id, channel_id: channel.id, content: Faker::Movie.quote)
             end
       end
 

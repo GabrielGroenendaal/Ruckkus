@@ -1,7 +1,7 @@
 import React, { useEffect, userRef, useState } from "react";
 
-function MessageBody(props) {
-  const [body, setBody] = useState(props.message.body)
+function Messagecontent(props) {
+  const [content, setcontent] = useState(props.message.content)
   const [edit, setEdit] = useState(false)
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function MessageBody(props) {
       const close = (e) => {
         if (e.keyCode === 27) {
           setEdit(!edit)
-          setBody(props.message.body)
+          setcontent(props.message.content)
         }
       };
 
@@ -25,7 +25,7 @@ function MessageBody(props) {
   }, [edit])
 
   const messageOptions = () => {
-    if (props.currentUserId === props.message.user.id) {
+    if (props.currentUser.id === props.message.user.id) {
       return (
         <div className="message-button-container">
           <div onClick={() => setEdit(!edit)}><svg aria-hidden="false" width="16" height="16" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z" fill="currentColor"></path></svg></div>
@@ -35,10 +35,10 @@ function MessageBody(props) {
     }
   }
 
-  const messageBody = () => {
+  const messagecontent = () => {
     return (
       <div>
-        {body}
+        {content}
         {messageOptions()}
       </div>
     )
@@ -49,7 +49,7 @@ function MessageBody(props) {
     e.stopPropagation();
 
     let message = props.message;
-    message.body = body;
+    message.content = content;
     props.updateMessage(message)
     setEdit(!edit)
   }
@@ -58,11 +58,11 @@ function MessageBody(props) {
     return (
       <div className="channel-message-edit">
         <form onSubmit={(e) => handleSubmit(e)} className="channel-message-edit-form">
-          <input type="text" value={body} onChange={(e) => setBody(e.currentTarget.value)}/>
+          <input type="text" value={content} onChange={(e) => setcontent(e.currentTarget.value)}/>
           <div className="message-edit-footer">
             escape to <span
               onClick={() => {
-                setBody(props.message.body)
+                setcontent(props.message.content)
                 setEdit(!edit)
               }}  
             >cancel</span> • enter to <span onClick={(e) => handleSubmit(e)}>save</span>
@@ -72,9 +72,9 @@ function MessageBody(props) {
     )
   }
 
-  const bodyContent = () => {
+  const contentContent = () => {
     if (!edit) {
-      return messageBody()
+      return messagecontent()
     } else {
       return messageEdit()
     }
@@ -84,9 +84,9 @@ function MessageBody(props) {
 
   return (
     <div className="message-body">
-      {bodyContent()}
+      {contentContent()}
     </div>
   )
 }
 
-export default MessageBody
+export default Messagecontent
