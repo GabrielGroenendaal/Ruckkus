@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import { createChannel } from "../../actions/channel_actions";
 import { closeModal } from "../../actions/modal_actions";
-import CreateChannel from "./create_channel";
+import CreateChannel from "./Create_Channel";
 
 const mapStateToProps = (state, ownProps) => {
   return {

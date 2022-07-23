@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 
 import { createMessage } from "../../actions/message_actions";
-import ChannelMessageCreate from "./channel_message_create";
-
+import ChannelMessageCreate from "./Channel_Message_Create";
 const mapStateToProps = (state, ownProps) => {
   return {
     message: {

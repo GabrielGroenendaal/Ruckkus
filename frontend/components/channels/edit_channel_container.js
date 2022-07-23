@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
-import EditChannel from "./edit_channel";
 import { updateChannel, deleteChannel } from "../../actions/channel_actions"
 import { closeModal } from "../../actions/modal_actions";
-
+import EditChannel from "./Edit_Channel";
 const mapStateToProps = state => {
   return {
     servers: state.entities.servers,
