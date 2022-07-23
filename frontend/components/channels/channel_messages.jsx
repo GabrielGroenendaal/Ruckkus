@@ -7,40 +7,7 @@ import MessageBodyContainer from "./channel_message_body_container";
 function ChannelMessages(props) {
       const [messages, setMessages] = useState([])
       const params = useParams()
-
-      //   useEffect(() => {
-      //     props.fetchChannel(params.channelId)
-
-      //     // const cable = createConsumer("ws://localhost:3000/cable")
-      //     const cable = createConsumer("wss://ruckkus.herokuapp.com/cable")
-
-      //     const paramsToSend = {
-      //       channel: "ConversationChannel",
-      //       id: params.channelId
-      //     }
-
-      //     const handlers = {
-      //       received(data) {
-      //         // console.log(data)
-      //         setMessages([...messages, data])
-      //       },
-
-      //       connected() {
-      //         // console.log("connected")
-      //       },
-
-      //       disconnected() {
-      //         // console.log("disconnected")
-      //       }
-      //     }
-
-      //     const subscription = cable.subscriptions.create(paramsToSend, handlers)
-
-      //     return function cleanup() {
-      //       // console.log("unsubbing from ", params.channelId)
-      //       subscription.unsubscribe()
-      //     }
-      //   }, [params.channelId, messages])
+      
 
       const messageProfile = (userId) => {
             const user = props.users[userId]

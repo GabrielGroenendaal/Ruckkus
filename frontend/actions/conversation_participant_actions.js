@@ -19,10 +19,10 @@ const removeConversationParticipation = conversationParticipation => {
 
 export const createConversationParticipation = conversationParticipation => dispatch => {
   return APIUtil.createConversationParticipation(conversationParticipation)
-    .then(conversationParticipation => dispatch(receiveconversationParticipant(conversationParticipation)))
+    .then(conversationParticipation => dispatch(receiveConversationParticipation(conversationParticipation)))
 }
 
 export const deleteConversationParticipation = conversationParticipation => dispatch => {
   return APIUtil.deleteConversationParticipation(conversationParticipation)
-    .then(conversationParticipation => dispatch(removeconversationParticipant(conversationParticipation)))
+    .then(conversationParticipation => dispatch(removeConversationParticipation(conversationParticipation)))
 }

@@ -4,14 +4,58 @@ import ChannelMessagesContainer from './channel_messages_container';
 class Channel extends React.Component {
       constructor(props) {
             super(props)
+
+            this.handleDirectMessage = this.handleDirectMessage.bind(this);
+            this.conversationShell = this.conversationShell.bind(this)
       }
 
-      // ConversationShell(user) {
-      //       if (user.id.toString() !== this.props.currentUserId.toString()) {
-      //             return <div className="server-user-dm" onClick={() => this.handleDm(user)}>Direct Message</div>
-      //       }
-      // }
+
+      handleDirectMessage(user) {
+            let currentConversations = {}
+
+            this.props.conversations.map(conversation => {
+                  // if (!conversation.users) {
+                  //       return null
+                  // }
+                  let participantIds = Object.keys(conversation.users)
+                  participantIds.map(participantId => {
+                        if (participantId.toString() != this.props.currentUser.id.toString()) {
+                              currentConversations[participantId] = conversation.id
+                        }
+                  })
+            })
+        
+            if (currentConversations[user.id.toString()]) {
+                  this.props.history.push(`/channels/@me/${currentConversations[user.id.toString()]}`)
+            } else {
+                  this.props.createConversation().then(response => {
+                        let conversationParticipation = {
+                              conversation_id: response.conversation.id,
+                              participant_id: this.props.currentUser.id
+                        }
+                        this.props.createConversationParticipation(conversationParticipation);
+                        let newConversationParticipation = {
+                              conversation_id: response.conversation.id,
+                              participant_id: user.id
+                        }
+                        this.props.createConversationParticipation(newConversationParticipation).then(response2 => {
+                              this.props.history.push(`/channels/@me/${response2.conversationParticipation.conversation_id}`)
+                        })
+                  })
+            }
+      }
+
+      conversationShell(user) {
+            if (user.id.toString() !== this.props.currentUser.id.toString()) {
+                  return <div className="server-user-dm" onClick={() => this.handleDirectMessage(user)}>Direct Message</div>
+            }
+      }
+      
       usersList() {
+
+            if (!this.props.users) {
+                  return null
+            }
             return (
                   <div className="users-list-shell">
                         <div className="users-list-header">MEMBERS - {this.props.users.length}</div>
@@ -20,9 +64,12 @@ class Channel extends React.Component {
                                     this.props.users.map(user => {
                                           let user_url = (user.user_url === '') ? window.default : user.user_url
                                           return (
-                                                <div key={user.id} className="server-user-info">
+                                                <div key={user.id}
+                                                      className="server-user-info"
+                                                >
                                                       <img src={user_url} alt="profile picture" />
                                                       <div>{user.username}</div>
+                                                      {this.conversationShell(user)}
                                                 </div>
                                           )
                                     })

@@ -44,14 +44,18 @@ ActiveRecord::Base.transaction do
 
       ServerMembership.destroy_all
       memberships = Hash.new { |h, k| h[k] = [] }
-      servers.sample(3).each { |server| memberships[server.id] << ServerMembership.create!(user_id: users[0].id, server_id: server.id)}
+      servers.drop(1).sample(2).each { |server| memberships[server.id] << ServerMembership.create!(user_id: users[0].id, server_id: server.id)}
       servers.each do |server|
             memberships[server.id] = []
             count = 6
             members = users.drop(1).sample(rand(4...11))
             members.each do |member|
-                  memberships[server.id] << ServerMembership.create!(user_id: member.id, server_id: server.id)
+                  if (member.id != server.owner_id)
+                        memberships[server.id] << ServerMembership.create!(user_id: member.id, server_id: server.id)
+                  end
             end
+
+            memberships[server.id] << ServerMembership.create!(user_id: server.owner_id, server_id: server.id)
       end
 
 

@@ -1,15 +1,15 @@
-export const createConversationParticipation = conversationParticipation => {
+export const createConversationParticipation = conversation_participant => {
       return $.ajax({
             url: `/api/conversation_participants`,
             method: 'POST',
-            data: { conversationParticipation }
+            data: { conversation_participant }
       })
 };
 
-export const deleteConversationParticipation = conversationParticipation => {
+export const deleteConversationParticipation = conversation_participant => {
       return $.ajax({
             url: `api/conversation_participants/${conversationParticipation.id}`,
             method: 'DELETE',
-            data: { conversationParticipation }
+            data: { conversation_participant }
       })
 };

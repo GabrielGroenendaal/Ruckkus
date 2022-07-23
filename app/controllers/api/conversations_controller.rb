@@ -20,8 +20,7 @@ class Api::ConversationsController < ApplicationController
             @conversation = Conversation.new()
             @current_user = current_user
             @conversation.owner_id = @current_user.id
-            if @conversation.save  
-                  #ConversationParticipant.new(conversation_id: @conversation.id, participant_id: @current_user.id)
+            if @conversation.save
                   render :show
             else  
                   render json: @conversation.errors.full_messages, status: 422

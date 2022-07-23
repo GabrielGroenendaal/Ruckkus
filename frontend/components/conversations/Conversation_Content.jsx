@@ -8,24 +8,31 @@ import { matchPath } from 'react-router-dom';
 class ConversationContent extends React.Component {
       constructor(props) {
             super(props)
+            this.state = {
+                  thing: ''
+            }
             this.friendsList = this.friendsList.bind(this)
       }
 
-      // componentDidMount() {
-      //       const match = matchPath(this.props.history.location.pathname, { path: `/channels/@ne/conversationId` })
-      //       this.props.fetchConversations()
-      //       this.props.conversations.map(conversationId => {
-      //                   this.props.fetchConversation(conversationId).then(
-      //                         () => {
-      //                               if (match && match.params.conversationId !== '@me') {
-      //                                     this.props.fetchConversation(match.params.conversationId)
-      //                               }
-      //                         })
-      //             })
-            
-      // }
+      componentDidMount() {
+            // const match = matchPath(this.props.history.location.pathname, { path: `/channels/@ne/conversationId` })
+            // this.props.fetchConversations().then(() => {
+            //       this.props.conversations.map(conversation => {
+            //             this.props.fetchConversation(conversation.id).then(
+            //                   () => {
+            //                         if (match && match.params.conversation.id !== '@me') {
+            //                               this.props.fetchConversation(match.params.conversation.id)
+            //                         }
+            //                   })
+            //       })
+                  // })
+            this.setState({thing: this.state.thing})
+      }
       friendsList() {
-            //console.log(this.props)
+            if (!this.props.conversations) {
+                  return null
+            }
+            console.log(this.props.conversations)
             return (
                   <div className="direct-messages-users-list-shell">
                         <header>
@@ -58,6 +65,7 @@ class ConversationContent extends React.Component {
             )
       }
       render() {
+
             return (
                   <div className="server-content-shell">
                         {this.friendsList()}

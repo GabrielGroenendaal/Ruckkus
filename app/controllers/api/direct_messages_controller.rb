@@ -15,7 +15,7 @@ class Api::DirectMessagesController < ApplicationController
       
       def create 
             @direct_message = DirectMessage.new(direct_message_params)
-            @conversation = Conversation.find(params[:conversation_id])
+            @conversation = Conversation.find_by(id: params[:conversation_id])
             @direct_message.creator_id = current_user.id 
             @direct_message.conversation_id = @conversation.id
 
@@ -31,7 +31,7 @@ class Api::DirectMessagesController < ApplicationController
       def update 
             @direct_message = DirectMessage.find(params[:id])
             @conversation = Conversation.find(@direct_message.conversation_id)
-            if (@direct_message && @direct.message.creator_id == current_user.id) && @direct_message.update(direct_message_params)
+            if (@direct_message && @direct_message.creator_id == current_user.id) && @direct_message.update(direct_message_params)
                   ConversationChannel.broadcast_to(@conversation, @direct_message)
                   render :show
             else  

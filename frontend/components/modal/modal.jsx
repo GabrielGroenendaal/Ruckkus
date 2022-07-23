@@ -9,7 +9,8 @@ import ServerPublicFormContainer from '../servers/server_form/server_public_form
 import ServerCreateFormContainer from '../servers/server_form/server_create_form_container'
 import ServerEditFormContainer from '../servers/server_form/server_edit_container'
 import UserOptionsContainer from '../user/user_options_container'
-
+import CreateChannelContainer from '../channels/create_channel_container'
+import EditChannelContainer from '../channels/edit_channel_container'
 class Modal extends React.Component {
       constructor(props) {
             super(props)
@@ -48,6 +49,12 @@ class Modal extends React.Component {
                         break;
                   case 'userOptions':
                         component = <UserOptionsContainer />
+                        break;
+                  case 'createChannel':
+                        component = <CreateChannelContainer />
+                        break;
+                  case 'editChannel':
+                        component = <EditChannelContainer history={this.props.history} />
                         break;
                   // case 'createChannel':
                   // case 'editChannel':

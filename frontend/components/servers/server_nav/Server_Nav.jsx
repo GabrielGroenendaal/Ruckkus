@@ -10,6 +10,9 @@ import { matchPath } from 'react-router-dom';
 class ServerNav extends React.Component {
       constructor(props) {
             super(props)
+            this.state = {
+                  butt: ''
+            }
       }
 
       componentDidMount() {
@@ -19,10 +22,13 @@ class ServerNav extends React.Component {
                   this.props.fetchServer(serverId).then(
                         () => {
                               if (match && match.params.serverId !== '@me') {
-                                    this.props.fetchServer(match.params.serverId)
+                                    this.props.fetchServer(match.params.serverId).then(() => {
+                                          this.setState({butt: this.state.butt})
+                                    })
                               }
                         })
             })
+
       }
 
       render() {
