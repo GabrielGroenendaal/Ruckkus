@@ -49,4 +49,4 @@ function CreateChannel(props) {
       )
 }
 
-export default CreateChannel
+export default CreateChannel;
