@@ -21,7 +21,7 @@ function Conversation(props) {
             props.fetchConversation(props.conversation.id)
 
             //const cable = createConsumer('ws://localhost:3000/cable')
-            const cable = createConsumer('wss://ruckkus:3000/cable')
+            const cable = createConsumer('wss://ruckkus.herokuapp.com/cable')
             const paramsToSend = {
                   channel: 'ConversationChannel',
                   id: props.conversation.id
