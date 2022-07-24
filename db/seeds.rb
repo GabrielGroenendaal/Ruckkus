@@ -28,7 +28,7 @@ ActiveRecord::Base.transaction do
       statuses = ['online', 'away', 'offline', 'do not disturb']
       users = []
       users << User.create!(email: 'demo@gmail.com', user_url: "https://i.imgur.com/XEmZeKe.png", username: 'John Souls', password: 'password', description: 'Just a demo account here to make friends', status: 'online')
-      (0...rand(35...45)).each do |i|
+      (0...rand(15...25)).each do |i|
             users << User.create!(email: 'demo' + i.to_s + '@gmail.com', user_url: images.sample(), username: Faker::Name.unique.name, password: 'password', description: '', status: statuses.sample())
       end
       # user1 = User.create!(email: 'demo@gmail.com', username: 'John Souls', password: 'password', description: '', status: 'online')
@@ -59,7 +59,7 @@ ActiveRecord::Base.transaction do
       server9 = Server.create!(owner_id: users.sample().id, name: 'Rock Climbing', is_public: true)
       server10 = Server.create!(owner_id: users.sample().id, name: 'Memes', is_public: true)
 
-      servers = [server1, server2, server3, server4, server5]
+      servers = [server1, server2, server3, server4, server5, server6, server7, server8, server9, server10]
 
 
 
@@ -68,7 +68,7 @@ ActiveRecord::Base.transaction do
       servers.drop(1).sample(2).each { |server| memberships[server.id] << ServerMembership.create!(user_id: users[0].id, server_id: server.id)}
       servers.each do |server|
             memberships[server.id] = []
-            members = users.drop(1).sample(rand(8...18))
+            members = users.drop(1).sample(rand(4...11))
             members.each do |member|
                   if (member.id != server.owner_id)
                         memberships[server.id] << ServerMembership.create!(user_id: member.id, server_id: server.id)
@@ -96,7 +96,7 @@ ActiveRecord::Base.transaction do
 
       Message.destroy_all
       channels.each do |channel|
-            (0...rand(32...50)).each do |i|
+            (0...rand(9...15)).each do |i|
                   Message.create!(creator_id: memberships[channel.server_id].sample().user_id, channel_id: channel.id, content: Faker::Quote.matz)
             end
       end
@@ -125,7 +125,7 @@ ActiveRecord::Base.transaction do
             ConversationParticipant.create(participant_id: friendship.user_id, conversation_id: new_conversation.id)
             ConversationParticipant.create(participant_id: friendship.friend_id, conversation_id: new_conversation.id)
 
-      (0...rand(10...22)).each do |i|
+      (0...rand(7...12)).each do |i|
                   DirectMessage.create!(creator_id: [friendship.user_id, friendship.friend_id].sample(), conversation_id: new_conversation.id, content: Faker::Movie.quote)
             end
       end

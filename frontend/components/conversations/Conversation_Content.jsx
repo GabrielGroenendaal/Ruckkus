@@ -15,17 +15,17 @@ class ConversationContent extends React.Component {
       }
 
       componentDidMount() {
-            // const match = matchPath(this.props.history.location.pathname, { path: `/channels/@ne/conversationId` })
-            // this.props.fetchConversations().then(() => {
-            //       this.props.conversations.map(conversation => {
-            //             this.props.fetchConversation(conversation.id).then(
-            //                   () => {
-            //                         if (match && match.params.conversation.id !== '@me') {
-            //                               this.props.fetchConversation(match.params.conversation.id)
-            //                         }
-            //                   })
-            //       })
-                  // })
+            const match = matchPath(this.props.history.location.pathname, { path: `/channels/@ne/conversationId` })
+            this.props.fetchConversations().then(() => {
+                  this.props.conversations.map(conversation => {
+                        this.props.fetchConversation(conversation.id).then(
+                              () => {
+                                    if (match && match.params.conversation.id !== '@me') {
+                                          this.props.fetchConversation(match.params.conversation.id)
+                                    }
+                              })
+                  })
+                  })
             this.setState({thing: this.state.thing})
       }
       friendsList() {

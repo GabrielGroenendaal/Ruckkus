@@ -4,7 +4,9 @@ import { serverInitial } from "../../../util/server_api_util";
 
 
 const ServerNavItems = props => {
-   
+      if (!props.server) {
+            return null
+      }
       const defaultChannelId = Object.keys(props.server.channels)[0];
       const handleClick = () => {
             props.fetchServer(props.server.id)
