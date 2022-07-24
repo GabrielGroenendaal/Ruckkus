@@ -12,3 +12,11 @@ export const updateUser = user => {
             data: { user: user }
       });
 };
+
+
+
+export const randomProfilePic = user => {
+      const pics = [
+            "https://i.imgur.com/aOotaBk.png"
+      ]
+}
