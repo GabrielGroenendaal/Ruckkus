@@ -11,7 +11,7 @@
 .channel-header {
       display: flex;
       align-items: center;
-      height: 48px;
+      min-height: 48px;
       border-bottom: 1px solid #292b2f;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
       color: white;
@@ -45,7 +45,7 @@
 
 }
 
-.users-list-shell > div {
+.users-list-shell>div {
       padding: 24px 8px 0 16px;
       height: 40px;
       font-family: 'ginto-normal', "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -55,6 +55,7 @@
       font-weight: 600;
       margin: 0px;
 }
+
 .server-user-info {
       display: flex;
       align-items: center;
@@ -62,6 +63,7 @@
       height: 42px;
       padding: 0 8px;
       position: relative;
+
       img {
             width: 32px;
             height: 32px;
@@ -69,7 +71,7 @@
             margin-right: 12px;
             line-height: 20px;
       }
-      
+
 }
 
 

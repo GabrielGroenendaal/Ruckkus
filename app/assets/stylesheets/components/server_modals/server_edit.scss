@@ -51,14 +51,15 @@
 
 .edit-server-delete:hover {
       cursor: pointer;
-      background-color: rgba(79, 84, 92, 0.6);
+      background-color: rgba(247, 50, 50, 0.6);
       color: white;
 }
 
 .edit-server-main {
       padding: 60px 40px 80px;
-      max-width: 740px;
-      min-width: 460px;
+      // max-width: 740px;
+      // min-width: 460px;
+      width: 100%;
       min-height: 100%;
       box-sizing: border-box;
 }
@@ -75,9 +76,10 @@
       display: flex;
       box-sizing: border-box;
       justify-content: flex-start;
-      align-items: stretch;
+      align-items: center;
       margin-left: 10px;
       margin-bottom: 20px;
+      flex-direction: row;
 }
 
 .edit-server-server-initial {
@@ -99,6 +101,7 @@
 .edit-server-form {
       display: flex;
       flex-direction: column;
+      padding-left: 100px;
 }
 
 .edit-server-form>label {

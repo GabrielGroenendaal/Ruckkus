@@ -1,7 +1,7 @@
 
 .splash-nav-header-container {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
       width: 100vw;
       height: 60px;
@@ -12,6 +12,10 @@
 .splash-logo {
       color: white;
       font-family: 'ginto-nord-black', "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
 }
 
 // .splash-logo-discord
@@ -22,10 +26,12 @@
 
 .splash-navigation-links {
       display: flex;
-      justify-content: space-around;
-      width: 20%;
+      justify-content: space-between;
+      align-items: center;
+      width: 30%;
+      height: 100%;
 
-      li > a {
+      a {
             color: white;
             text-decoration: none;
             font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -33,7 +39,7 @@
             font-weight: bold;
       }
 
-      li > a:hover {
+      a:hover {
             text-decoration: underline;
       }
 }

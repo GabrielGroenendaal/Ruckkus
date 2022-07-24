@@ -1,7 +1,7 @@
 import React, { useEffect, userRef, useState } from "react";
 
 
-function CreateChannel(props) {
+const CreateChannel = (props) => {
       const [name, setName] = useState("")
       let urlElements = window.location.href.split('/')
       // console.log(urlElements)

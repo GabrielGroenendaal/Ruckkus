@@ -14,11 +14,17 @@ const SplashNav = (props) => {
                               </span>
                               <span>Ruckkus</span>
                         </div>
-                        <ul className="splash-navigation-links">
-                              <li><a href="https://github.com/GabrielGroenendaal/DiscordClone/" target="_blank">Github</a></li>
-                              <li><a href="https://www.linkedin.com/in/gabriel-groenendaal-2b3b4515b/" target="_blank">LinkedIn</a></li>
-                              <li><a href="https://www.gabrielgroenendaal.com/" target="_blank">Portfolio</a></li>
-                        </ul>
+                        <div className="splash-navigation-links">
+                          
+                                    <a href="https://github.com/GabrielGroenendaal/DiscordClone/" rel="noopener noreferrer" target="_blank">Github</a>
+                            
+                                    <a href="https://www.linkedin.com/in/gabriel-groenendaal-2b3b4515b/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+                              
+                              <a href="https://www.gabrielgroenendaal.com/" rel="noopener noreferrer" target="_blank">Portfolio</a>
+                              <a href="https://angel.co/u/gabriel-groenendaal" rel="noopener noreferrer" target="_blank">AngelList</a>
+
+                          
+                        </div>
                         <button className="nav-splash-button" onClick={() => { props.history.push(new_url) }}>{linkText}</button>
 
                   </nav>

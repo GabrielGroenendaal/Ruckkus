@@ -14,7 +14,7 @@ function CreateDirectMessage(props) {
       }
 
       return (
-            <div className="message-form-shell" >
+            <div className="message-form-container" >
                   <form className="message-form" onSubmit={e => handleSubmit(e)}>
                         <input
                               type="text"

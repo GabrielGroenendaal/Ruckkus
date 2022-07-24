@@ -8,9 +8,9 @@
       display: flex;
       flex-direction: column;
       font-family: 'ginto-normal', "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    }
-    
-    .create-channel-header {
+}
+
+.create-channel-header {
       margin-top: 16px;
       margin-bottom: 16px;
       border-radius: 5px 5px 0 0;
@@ -19,32 +19,32 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-    }
-    
-    .create-channel-header > h2 {
+}
+
+.create-channel-header>h2 {
       font-weight: 700;
       color: white;
       font-size: 24px;
       line-height: 30px;
-    }
-    
-    .create-channel-header > div {
+}
+
+.create-channel-header>div {
       color: #b9bbbe;
       font-size: 12px;
       line-height: 16px;
       font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    }
-    
-    .channel-create-form {
+}
+
+.channel-create-form {
       // padding-right: 8px;
       // padding-left: 16px;
-      border-radius: 5px 5px  0 0;
+      border-radius: 5px 5px 0 0;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-    }
-    
-    .channel-create-form > label {
+}
+
+.channel-create-form>label {
       color: #dcddde;
       padding-right: 8px;
       padding-left: 16px;
@@ -52,9 +52,9 @@
       font-size: 12px;
       line-height: 16px;
       font-weight: 700;
-    }
-    
-    .channel-create-form > input {
+}
+
+.channel-create-form>input {
       margin-left: 16px;
       margin-right: 8px;
       padding: 10px;
@@ -68,10 +68,10 @@
       outline: 0;
       border: 0;
       margin-bottom: 20px;
-    
-    }
-    
-    .channel-create-footer {
+
+}
+
+.channel-create-footer {
       box-shadow: inset 0 1px 0 #2f313699;
       background-color: #2f3136;
       border-radius: 0 0 5px 5px;
@@ -79,9 +79,9 @@
       display: flex;
       justify-content: flex-end;
       font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    }
-    
-    .channel-create-footer > div {
+}
+
+.channel-create-footer>div {
       color: white;
       height: 38px;
       font-size: 14px;
@@ -90,14 +90,14 @@
       padding: 2px 16px;
       display: flex;
       align-items: center;
-    }
-    
-    .channel-create-footer > div:hover {
+}
+
+.channel-create-footer>div:hover {
       cursor: pointer;
       text-decoration: underline;
-    }
-    
-    .channel-create-footer > button {
+}
+
+.channel-create-footer>button {
       color: white;
       background-color: #4d59d5;
       height: 38px;
@@ -110,9 +110,9 @@
       padding: 2px 16px;
       outline: 0;
       border: 0;
-    }
-    
-    .channel-create-footer > button:hover {
+}
+
+.channel-create-footer>button:hover {
       cursor: pointer;
       background-color: #4752c4;
-    }
+}

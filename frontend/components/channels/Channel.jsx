@@ -47,7 +47,12 @@ class Channel extends React.Component {
 
       conversationShell(user) {
             if (user.id.toString() !== this.props.currentUser.id.toString()) {
-                  return <div className="server-user-dm" onClick={() => this.handleDirectMessage(user)}>Direct Message</div>
+                  return (
+                        <div className="server-user-dm" onClick={() => this.handleDirectMessage(user)}>
+                              Direct Message
+                        </div>
+
+                  )
             }
       }
       

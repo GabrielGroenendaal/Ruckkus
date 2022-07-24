@@ -4,7 +4,7 @@ import { createConsumer } from "@rails/actioncable"
 import ChannelMessageCreateContainer from "./channel_message_create_container";
 import MessageBodyContainer from "./channel_message_body_container";
 
-function ChannelMessages(props) {
+const ChannelMessages = (props) => {
 
       if (!props.channel) {
             return null
@@ -53,7 +53,7 @@ function ChannelMessages(props) {
             if (!user) return null
             let profilePicUrl
             (user.user_url === '') ?
-                  profilePicUrl = "https://sidcord-dev.s3.us-west-1.amazonaws.com/icon_blue.png" :
+                  profilePicUrl = "https://i.imgur.com/aOotaBk.png" :
                   profilePicUrl = user.user_url
 
             return (

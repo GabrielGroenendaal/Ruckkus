@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function EditChannel(props) {
+const EditChannel = (props) => {
 
       
       const getServer = () => {
@@ -82,9 +82,9 @@ function EditChannel(props) {
                                     <div>
                   {channel.name.toUpperCase()}
             </div>
-                                    <div className="edit-channel-channels-type">
+                                    {/* <div className="edit-channel-channels-type">
                                           TEXT CHANNELS
-                                    </div>
+                                    </div> */}
                               </header>
                               <main className="edit-channel-sidebar-main">
                                     <div className="edit-sidebar-content">Overview</div>
@@ -109,6 +109,7 @@ function EditChannel(props) {
                                     CHANNEL NAME
                               </label>
                               <input type="text" value={channelName} onChange={e => setChannelName(e.target.value)} />
+                              <div class="channel-create-footer" id="edit-channel-form-thing"><button type="submit">Change Channel Name</button></div>
                         </form>
                   </main>
             </div>

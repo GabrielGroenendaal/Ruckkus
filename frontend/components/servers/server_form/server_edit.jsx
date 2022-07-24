@@ -78,6 +78,11 @@ function ServerEdit(props) {
                                           SERVER NAME
                                     </label>
                                     <input type="text" value={serverName} onChange={e => setServerName(e.target.value)} />
+
+                                    <div className="channel-create-footer">
+                                          {/* <div onClick={() => props.closeModal()}>Cancel</div> */}
+                                          <button type="submit">Edit Server Name</button>
+                                    </div>
                               </form>
                         </div>
                   </main>

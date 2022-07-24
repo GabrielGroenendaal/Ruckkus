@@ -49,7 +49,19 @@ function UserOptions(props) {
 
       const usernameEditDisplay = () => {
             let usernameBody
-            if (usernameEdit) {
+            if (props.currentUser.username == 'John Souls') {
+                  usernameBody = (
+                        <div className="edit-user-shell edit-username">
+                              <div className="edit-user-info">
+                                    <h3>USERNAME</h3>
+                                    <span>{props.currentUser.username}</span>
+                                    <span id="user-options-tag">#{props.currentUser.user_tag}</span>
+                              </div>
+                     
+                        </div>
+                  )
+            }
+            else if (usernameEdit) {
                   usernameBody = (
                         <div className="edit-user-shell edit-username">
                               <form onSubmit={(e) => handleSubmit(e)} className="edit-user-form">
@@ -76,7 +88,7 @@ function UserOptions(props) {
       }
 
       const demoUser = () => {
-            if (props.currentUser.name == 'John Souls') {
+            if (props.currentUser.username == 'John Souls') {
                   return (
                         <div className="demo-edit-warning">
                               Editing Disabled For Demo Account
@@ -87,7 +99,17 @@ function UserOptions(props) {
 
       const emailEditDisplay = () => {
             let emailBody
-            if (emailEdit) {
+            if (props.currentUser.username == 'John Souls') {
+                  emailBody = (
+                        <div className="edit-user-shell">
+                              <div className="edit-user-info">
+                                    <h3>EMAIL</h3>
+                                    <span>{props.currentUser.email}</span>
+                              </div>
+                        </div>
+                  )
+            }
+            else if (emailEdit) {
                   emailBody = (
                         <div className="edit-user-shell">
                               <form onSubmit={(e) => handleSubmit(e)} className="edit-user-form">

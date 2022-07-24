@@ -17,6 +17,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 const App = () => (
             <div className="app">
                   <Route path='/' component={modal}></Route>
+                  
                   <ProtectedRoute path="/channels" component={ServerNavBarContainer} />
                   <Switch>
                         <ProtectedRoute path="/channels/@me" component={ConversationContentContainer} />
