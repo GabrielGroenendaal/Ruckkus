@@ -121,7 +121,7 @@ function Conversation(props) {
                                     {props.user.username}
                               </div>
                         </header>
-                        <div className="channel-messages-shell">
+                        <div className="channel-messages-shell conversation-messages-shell">
                               {/* {messages()} */}
                               <ConversationMessagesContainer user={props.user} currentUser={props.currentUser} />
                               <CreateDirectMessageContainer user={props.user} conversation={props.conversation} />

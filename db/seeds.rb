@@ -68,7 +68,7 @@ ActiveRecord::Base.transaction do
       servers.drop(1).sample(2).each { |server| memberships[server.id] << ServerMembership.create!(user_id: users[0].id, server_id: server.id)}
       servers.each do |server|
             memberships[server.id] = []
-            members = users.drop(1).sample(rand(15...31))
+            members = users.drop(1).sample(rand(8...18))
             members.each do |member|
                   if (member.id != server.owner_id)
                         memberships[server.id] << ServerMembership.create!(user_id: member.id, server_id: server.id)
