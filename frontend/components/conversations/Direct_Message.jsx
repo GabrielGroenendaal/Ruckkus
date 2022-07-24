@@ -42,7 +42,7 @@ const DirectMessage = (props) => {
       const messageBody = () => {
             return (
                   <div>
-                        {content}
+                        {props.direct_message.content}
                         {messageOptions()}
                   </div>
             )

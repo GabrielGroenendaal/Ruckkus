@@ -14,9 +14,9 @@ class Channel extends React.Component {
             let currentConversations = {}
 
             this.props.conversations.map(conversation => {
-                  // if (!conversation.users) {
-                  //       return null
-                  // }
+                  if (!conversation.users) {
+                        return null
+                  }
                   let participantIds = Object.keys(conversation.users)
                   participantIds.map(participantId => {
                         if (participantId.toString() != this.props.currentUser.id.toString()) {

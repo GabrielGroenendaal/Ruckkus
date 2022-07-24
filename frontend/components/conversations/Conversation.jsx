@@ -4,6 +4,7 @@ import CreateDirectMessageContainer from './create_direct_message_container';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { createConsumer } from '@rails/actioncable';
+import ConversationMessagesContainer from './conversation_messages_container';
 function Conversation(props) {
       // console.log(props)
 
@@ -26,7 +27,6 @@ function Conversation(props) {
                   channel: 'ConversationChannel',
                   id: props.conversation.id
             }
-            console.log(paramsToSend)
 
             const handlers = {
                   received(data) {
@@ -77,12 +77,12 @@ function Conversation(props) {
       const messages = () => {
             if (!props.conversation.direct_messages) { return null }
             console.log(props.conversation.direct_messages)
-            let arr = Object.values(props.conversation.direct_messages)
+            // let arr = Object.values(props.conversation.direct_messages)
             return (
                         <div className="messages-body">
                               <ul>
                               {
-                                    arr.map((dm, idx) => {
+                                    Object.values(props.conversation.direct_messages).map((dm, idx) => {
                                           return (
                                                 <li className="channel-message" key={idx.toString()} id={`directMessage-${dm.id}`}>
                                                       {messageProfile(dm.user.id)}
@@ -122,9 +122,10 @@ function Conversation(props) {
                               </div>
                         </header>
                         <div className="channel-messages-shell">
-                              {messages()}
+                              {/* {messages()} */}
+                              <ConversationMessagesContainer user={props.user} currentUser={props.currentUser} />
                               <CreateDirectMessageContainer user={props.user} conversation={props.conversation} />
-                         </div>
+                              </div>
                        
                   </div>
             )
