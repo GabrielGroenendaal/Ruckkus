@@ -126,7 +126,7 @@ ActiveRecord::Base.transaction do
             ConversationParticipant.create(participant_id: friendship.friend_id, conversation_id: new_conversation.id)
 
       (0...rand(10...22)).each do |i|
-                  DirectMessage.create!(creator_id: [friendship.user_id, friendship.friend_id].sample(), conversation_id: new_conversation.id, content: Faker::Quote.matz)
+                  DirectMessage.create!(creator_id: [friendship.user_id, friendship.friend_id].sample(), conversation_id: new_conversation.id, content: Faker::Movie.quote)
             end
       end
       
