@@ -25,7 +25,9 @@
 ***
 
 ## Major Features and Code Snippets
-### Feature A
+### Servers
+The user can create servers based off any topic where others can join and have conversations. A number of modals 
+
 ```
   // Some code goes here
 ```
