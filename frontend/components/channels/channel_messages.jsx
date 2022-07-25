@@ -72,7 +72,7 @@ const ChannelMessages = (props) => {
       }
 
       const content = () => {
-            console.log(props.messages)
+            // console.log(props.messages)
             return (
                   <div className="messages-body">
                   <ul>
