@@ -1,10 +1,10 @@
-# Welcome to Ruckkus
+# Ruckkus
+## [Live Link](https://ruckkus.herokuapp.com/#/) 
+<img width="1436" alt="Splash_Ruckkus" src="https://user-images.githubusercontent.com/36039557/180856262-68a00b27-9b24-472f-8e35-0f0405a767b5.png">
 
-***
 
 [Ruckkus](https://ruckkus.herokuapp.com/#/) is a clone of the popular messaging app Discord where users can join and create servers to live chat with others. Users are able to sign up and make a new account, or log into an existing account in order to live message other users directly or through a public or private server. Messages are organized into individual conversations and channels.
 
-![Screenshot](https://i.imgur.com/8RGbFiK.png)
 
 ***
 
@@ -24,7 +24,7 @@
 
 ***
 
-## Complete Features
+## Major Features and Code Snippets
 * Servers
   * Server Options
 * Channels
@@ -34,7 +34,7 @@
 
 ***
 
-## Features in Progress
+<!-- ## Features in Progress
 * Message Display
 * Channel Creation and Editing
 * Live Chat 
@@ -42,4 +42,4 @@
 * Uploading images for profile pics / server pics 
 
 ***
-
+ -->
