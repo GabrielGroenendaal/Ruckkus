@@ -1,5 +1,5 @@
 # Ruckkus
-## [Live Link](https://ruckkus.herokuapp.com/#/) 
+### [Live Link](https://ruckkus.herokuapp.com/#/) 
 <img width="1436" alt="Splash_Ruckkus" src="https://user-images.githubusercontent.com/36039557/180856262-68a00b27-9b24-472f-8e35-0f0405a767b5.png">
 
 
