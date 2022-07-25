@@ -16,7 +16,7 @@ const ChannelMessages = (props) => {
       useEffect(() => {
             props.fetchChannel(props.channel.id)
             // const cable = createConsumer("ws://localhost:3000/cable")
-            const cable = createConsumer('ws://ruckkus.herokuapp.com/#/cable')
+            const cable = createConsumer('ws://ruckkus.herokuapp.com/cable')
 
             const paramsToSend = {
                   channel: "ChannelChannel",
