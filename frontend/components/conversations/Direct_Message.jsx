@@ -65,7 +65,7 @@ const DirectMessage = (props) => {
                               <input type="text" value={content} onChange={e => setContent(e.currentTarget.value)} />
                               <div className="message-edit-footer">
                                     escape to <span onClick={() => {
-                                          setBody(props.direct_message.content)
+                                          setContent(props.direct_message.content)
                                           setEdit(!edit)
                                     }}>cancel</span> • enter to <span onClick={(e) => handleSubmit(e)}>save</span>
                               </div>
