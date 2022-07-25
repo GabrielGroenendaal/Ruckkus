@@ -12,9 +12,14 @@ const ChannelMessages = (props) => {
       const [messages, setMessages] = useState([])
       const params = useParams()
 
+      // const scrollDown = () => {
+      //       let messageBody = document.getElementsByClassName('message-body-scroll')[0];
+      //       messageBody.scrollTop = messageBody.scrollHeight;
+      // }
 
       useEffect(() => {
             props.fetchChannel(props.channel.id)
+            // scrollDown()
             console.log('apple')
             // const cable = createConsumer("ws://localhost:3000/cable")
             const cable = createConsumer('wss://ruckkus.herokuapp.com/cable')
@@ -30,11 +35,11 @@ const ChannelMessages = (props) => {
                   },
 
                   connected() {
-                        console.log('connected')
+                        // console.log('connected')
                   },
 
                   disconnected() {
-                        console.log("disconnected")
+                        // console.log("disconnected")
                   }
             }
 
@@ -76,7 +81,7 @@ const ChannelMessages = (props) => {
             // console.log(props.messages)
             return (
                   <div className="messages-body">
-                  <ul>
+                  <ul className="message-body-scroll">
                         {
                               Object.values(props.messages).map(message => {
                               
