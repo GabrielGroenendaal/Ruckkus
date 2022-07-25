@@ -25,11 +25,11 @@
 ***
 
 ## Major Features and Code Snippets
-## Feature A
+### Feature A
 ```
   // Some code goes here
 ```
-## Feature B
+### Feature B
 ```
   // Some code goes here
 ```
