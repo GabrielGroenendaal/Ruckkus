@@ -22,8 +22,8 @@ export const fetchMessage = messageId => dispatch => {
             .then(message => dispatch(receiveMessage(message)))
 };
 
-export const createMessage = (channelId, message) => dispatch => {
-      return APIUtil.createMessage(channelId, message)
+export const createMessage = (serverId, channelId, message) => dispatch => {
+      return APIUtil.createMessage(serverId, channelId, message)
             .then(message => dispatch(receiveMessage(message)))
 };
 

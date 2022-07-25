@@ -14,7 +14,7 @@ const ChannelMessageCreate = (props) => {
             e.preventDefault();
             e.stopPropagation();
             let message = { content: body }
-            props.createMessage(props.channel.id, message)
+            props.createMessage(props.channel.server_id, props.channel.id, message)
             setBody("")
       }
 
