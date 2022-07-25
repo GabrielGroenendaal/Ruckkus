@@ -76,7 +76,7 @@ function Conversation(props) {
    
       const messages = () => {
             if (!props.conversation.direct_messages) { return null }
-            console.log(props.conversation.direct_messages)
+            //console.log(props.conversation.direct_messages)
             // let arr = Object.values(props.conversation.direct_messages)
             return (
                         <div className="messages-body">

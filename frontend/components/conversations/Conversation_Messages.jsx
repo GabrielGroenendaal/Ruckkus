@@ -10,7 +10,7 @@ const ConversationMessages = props => {
             )
       
       }
-      console.log(props.messages)
+      //console.log(props.messages)
 
       const messageProfile = (userId) => {
             let user = (userId === props.user.id) ? props.user : props.currentUser

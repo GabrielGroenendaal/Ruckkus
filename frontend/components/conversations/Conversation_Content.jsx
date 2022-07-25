@@ -32,7 +32,7 @@ class ConversationContent extends React.Component {
             if (!this.props.conversations) {
                   return null
             }
-            console.log(this.props.conversations)
+            //console.log(this.props.conversations)
             return (
                   <div className="direct-messages-users-list-shell">
                         <header>
