@@ -25,12 +25,14 @@
 ***
 
 ## Major Features and Code Snippets
-* Servers
-  * Server Options
-* Channels
-* Conversations
-* Users
-  * User Options
+## Feature A
+```
+  // Some code goes here
+```
+## Feature B
+```
+  // Some code goes here
+```
 
 ***
 
