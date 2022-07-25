@@ -15,6 +15,7 @@ const ChannelMessages = (props) => {
 
       useEffect(() => {
             props.fetchChannel(props.channel.id)
+            console.log('apple')
             // const cable = createConsumer("ws://localhost:3000/cable")
             const cable = createConsumer('wss://ruckkus.herokuapp.com/cable')
 
