@@ -1,9 +1,8 @@
 # Ruckkus
-### [Live Link](https://ruckkus.herokuapp.com/#/) 
+### <a href="https://ruckkus.herokuapp.com/#/" target="_blank">Live Link</a>
 <img width="1436" alt="Splash_Ruckkus" src="https://user-images.githubusercontent.com/36039557/180856262-68a00b27-9b24-472f-8e35-0f0405a767b5.png">
 
-
-[Ruckkus](https://ruckkus.herokuapp.com/#/) is a clone of the popular messaging app Discord where users can join and create servers to live chat with others. Users are able to sign up and make a new account, or log into an existing account in order to live message other users directly or through a public or private server. Messages are organized into individual conversations and channels.
+<a href="https://ruckkus.herokuapp.com/#/" target="_blank">**Ruckkus**</a> is a full-stack, comprehensive clone of the popular messaging app <a href="https:/discord.com/" target="_blank">**Discord**</a> where users can join and create servers to live chat with others. Users are able to sign up and make a new account, or log into an existing account in order to live message other users directly or through a public or private server. Messages are organized into individual conversations and channels.
 
 
 ***
@@ -167,6 +166,7 @@ I would like to acknowledge that the following were invaluable to understanding 
 * [Utilizing Action Cables](https://javascript.plainenglish.io/building-a-simple-live-chat-in-react-with-action-cable-8c2abf7a25b5)
 * [Deploying Action Cables to Heroku](https://medium.com/swlh/deploying-a-rails-react-app-with-actioncable-to-heroku-cb5d42f41a2a)
 * Ricky Zheng for helping trouble shoot live chat on Heroku
+* AppAcademy for teaching me worlds of knowledge about software development and building Full Stack projects
 * All images used were from Discord and used for educational purposes.
 
 ***
