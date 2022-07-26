@@ -25,8 +25,10 @@
 ***
 
 ## Major Features and Code Snippets
-![Live Chat](https://user-images.githubusercontent.com/36039557/181037813-eaf89361-3b5f-4a23-a6e3-ce6e257cd7f0.gif)
+
 ### Live Chat
+![Live Chat](https://user-images.githubusercontent.com/36039557/181037813-eaf89361-3b5f-4a23-a6e3-ce6e257cd7f0.gif)
+
 The core feature of Discord is the ability to chat in real-time with other users, a functionality I provided through the use of WebSockets implemented by Action Cable.  This is achieved by utilizing React hooks and Action Cables in the ```Conversation``` and ```Channel``` components. When these componens are mounted, a cable subscription is instantiated, allowing users to receive updates from a variety of channels at once.
 ```
 function Conversation(props) {
@@ -56,8 +58,11 @@ function Conversation(props) {
       }, [props.conversation.id, directMessages])
 }
 ```
-![Server Index](https://user-images.githubusercontent.com/36039557/181045141-f755a78a-a98a-4d3d-9b66-68250847e02e.gif)
+***
+
 ### Server Index
+![Server Index](https://user-images.githubusercontent.com/36039557/181045141-f755a78a-a98a-4d3d-9b66-68250847e02e.gif)
+
 The user can create ```Servers``` based off any topic where others can join and live chat in ```Channels```. Memberships between users and servers are stored as ```ServerMemberships``` which are used to prevent Users from signing up to servers multiple times. Users can also join any server that is listed as ```is_public```. So when producing a list of servers for Users to join in ```ServerIndex``` it was necessary to have a helper function to produce the list of public servers the ```currentUser``` is not already a member of.
 
 ```
@@ -99,8 +104,11 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStatetoProps, mapDispatchToProps)(ServerIndex)
 ```
-![Direct Messages from Server](https://user-images.githubusercontent.com/36039557/181046314-3894d7ad-ea27-4b07-afb5-1e29899eff7b.gif)
+***
+
 ### Direct Messages from Server 
+![Direct Messages from Server](https://user-images.githubusercontent.com/36039557/181046314-3894d7ad-ea27-4b07-afb5-1e29899eff7b.gif)
+
 Each ```Server``` showcases a list of its members. Users are able to hover over the display for other users and click a 'Direct Message' element in order to initiate a new ```Conversation``` with that user. This feature was tricky to implement because it required keeping track of the ```currentUser``` conversations within the ```Channel``` component. 
 ```
 class Channel extends React.Component {
