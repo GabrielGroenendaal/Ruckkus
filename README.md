@@ -10,17 +10,17 @@
 
 ## Technologies Utilized
 * Frontend
-   * React and Redux for frontend state management and rendering components
-   * HTML for website structure for the React Components 
-   * SCSS for styling elements 
-   * Javascript for dynamic updates to the frontend and other front-end logic 
+   * ```React``` and ```Redux``` for frontend state management and rendering components
+   * ```HTML5``` for website structure for the React Components 
+   * ```SCSS``` for styling elements 
+   * ```Javascript``` for dynamic updates to the frontend and other front-end logic 
 * Backend 
-   * Rails for a web application framework 
-   * Ruby 2.5.1 for backend and database logic 
-   * PostgresSQL for data storage and management 
+   * ```Rails``` for a web application framework 
+   * ```Ruby 2.5.1``` for backend and database logic 
+   * ```PostgresSQL``` for data storage and management 
 * Full Stack 
-   * Action Cables for live messaging 
-   * Heroku for hosting and production
+   * ```Action Cables``` and ```Redis``` for live messaging 
+   * ```Heroku``` for hosting and production
 
 ***
 
