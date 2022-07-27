@@ -20,7 +20,7 @@ const SplashNav = (props) => {
                             
                                     <a href="https://www.linkedin.com/in/gabriel-groenendaal-2b3b4515b/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
                               
-                              <a href="https://gabrielgroenendaal.github.io/Portfolio/" rel="noopener noreferrer" target="_blank">Portfolio</a>
+                              <a href="https://gabrielgroenendaal.github.io/portfolio/" rel="noopener noreferrer" target="_blank">Portfolio</a>
                               <a href="https://angel.co/u/gabriel-groenendaal" rel="noopener noreferrer" target="_blank">AngelList</a>
 
                           
