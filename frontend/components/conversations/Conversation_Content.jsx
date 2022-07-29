@@ -10,22 +10,24 @@ class ConversationContent extends React.Component {
             super(props)
             this.state = {
                   thing: ''
+                  // conversations: this.props.conversations
             }
             this.friendsList = this.friendsList.bind(this)
       }
 
       componentDidMount() {
-            const match = matchPath(this.props.history.location.pathname, { path: `/channels/@ne/conversationId` })
-            this.props.fetchConversations().then(() => {
-                  this.props.conversations.map(conversation => {
-                        this.props.fetchConversation(conversation.id).then(
-                              () => {
-                                    if (match && match.params.conversation.id !== '@me') {
-                                          this.props.fetchConversation(match.params.conversation.id)
-                                    }
-                              })
-                  })
-                  })
+            // console.log("222")
+            // const match = matchPath(this.props.history.location.pathname, { path: `/channels/@me/conversationId` })
+            // this.props.fetchConversations().then(() => {
+            //       // this.props.conversations.map(conversation => {
+            //       //       this.props.fetchConversation(conversation.id).then(
+            //       //             () => {
+            //       //                   if (match && match.params.conversation.id !== '@me') {
+            //       //                         this.props.fetchConversation(match.params.conversation.id)
+            //       //                   }
+            //       //             })
+            //       // })
+            //       })
             this.setState({thing: this.state.thing})
       }
       friendsList() {
