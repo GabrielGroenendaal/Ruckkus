@@ -78,8 +78,16 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: DiscordClone_production
+#   username: DiscordClone
+#   password: <%= ENV['DISCORDCLONE_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
-  database: DiscordClone_production
-  username: DiscordClone
-  password: <%= ENV['DISCORDCLONE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+  # database: appname_production
+  # username: appname
+  # password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>

@@ -20,7 +20,8 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = Uglifier.new(harmony: true)
@@ -43,9 +44,9 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-config.action_cable.url = 'wss://ruckkus.herokuapp.com/cable'
-config.web_socket_server_url = 'wss://ruckkus.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = [ 'http://ruckkus.herokuapp.com', 'https://ruckkus.herokuapp.com' ]
+config.action_cable.url = 'wss://ruckkus.onrender.com/cable'
+config.web_socket_server_url = 'wss://ruckkus.onrender.com/cable'
+  config.action_cable.allowed_request_origins = [ 'https://ruckkus.onrender.com', 'http://ruckkus.onrender.com' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true

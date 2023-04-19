@@ -1,8 +1,8 @@
 # Ruckkus
-### <a href="https://ruckkus.herokuapp.com/#/" target="_blank">Live Link</a>
+### <a href="https://ruckkus.onrender.com/#/" target="_blank">Live Link</a>
 <img width="1436" alt="Splash_Ruckkus" src="https://user-images.githubusercontent.com/36039557/180856262-68a00b27-9b24-472f-8e35-0f0405a767b5.png">
 
-<a href="https://ruckkus.herokuapp.com/#/" target="_blank">**Ruckkus**</a> is a full-stack, comprehensive clone of the popular messaging app <a href="https:/discord.com/" target="_blank">**Discord**</a> where users can join and create servers to live chat with others. Users are able to sign up and make a new account, or log into an existing account in order to live message other users directly or through a public or private server. Messages are organized into individual conversations and channels.
+<a href="https://ruckkus.onrender.com/#/" target="_blank">**Ruckkus**</a> is a full-stack, comprehensive clone of the popular messaging app <a href="https:/discord.com/" target="_blank">**Discord**</a> where users can join and create servers to live chat with others. Users are able to sign up and make a new account, or log into an existing account in order to live message other users directly or through a public or private server. Messages are organized into individual conversations and channels.
 
 
 ***
@@ -19,7 +19,7 @@
    * ```PostgresSQL``` for data storage and management 
 * Full Stack 
    * ```Action Cables``` and ```Redis``` for live messaging 
-   * ```Heroku``` for hosting and production
+   * ```Render``` for hosting and production
 
 ***
 
@@ -37,7 +37,7 @@ function Conversation(props) {
       useEffect(() => {
             props.fetchConversation(props.conversation.id)
 
-            const cable = createConsumer('wss://ruckkus.herokuapp.com/cable')
+            const cable = createConsumer('wss://ruckkus.onrender.com/cable')
             const paramsToSend = {
                   channel: 'ConversationChannel',
                   id: props.conversation.id

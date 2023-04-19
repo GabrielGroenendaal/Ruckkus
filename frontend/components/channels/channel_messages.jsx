@@ -21,7 +21,7 @@ const ChannelMessages = (props) => {
             props.fetchChannel(props.channel.id)
             // scrollDown()
             // const cable = createConsumer("ws://localhost:3000/cable")
-            const cable = createConsumer('wss://ruckkus.herokuapp.com/cable')
+            const cable = createConsumer('wss://ruckkus.onrender.com/cable')
 
             const paramsToSend = {
                   channel: "ChannelChannel",
